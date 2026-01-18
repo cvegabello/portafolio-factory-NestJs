@@ -43,7 +43,7 @@ export default function Navbar() {
       <nav className="fixed top-0 w-full z-50 flex justify-center transition-all duration-300 bg-black/90 backdrop-blur-md border-b border-white/10">
         
         {/* Usamos px-12 como acordamos para separar de los bordes */}
-        <div className="w-full max-w-[1200px] mx-auto px-12 md:px-24 h-full">
+        <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 xl:px-24 h-full">
           
           <div className="flex items-center justify-between h-20 ml-10!">
             
@@ -62,7 +62,7 @@ export default function Navbar() {
             </Link>
 
             {/* MENÚ DESKTOP (Solo PC) */}
-            <div className="hidden md:flex items-center gap-10">
+            <div className="hidden xl:flex items-center gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -83,7 +83,7 @@ export default function Navbar() {
 
             {/* BOTÓN HAMBURGUESA (MÓVIL) */}
             {/* CAMBIO 2: Agregué 'cursor-pointer' explícito y mantuve tu '!mr-10' */}
-            <div className="md:hidden flex items-center mr-10!">
+            <div className="xl:hidden flex items-center mr-10!">
               <button
                 onClick={toggleMenu}
                 className="cursor-pointer text-accent hover:text-white transition-colors p-2 border-2 border-accent rounded-lg hover:bg-accent "
