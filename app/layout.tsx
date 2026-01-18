@@ -32,7 +32,17 @@ export default function RootLayout({
     <html lang="es" style={{ backgroundColor: '#000000', color: '#ffffff' }}>
       <body
         className={`${openSans.variable} ${montserrat.variable} ${firaCode.variable} antialiased`}
-        style={{ backgroundColor: '#000000', color: '#ffffff', margin: 0, padding: 0 }}
+        // Corregida la sintaxis del objeto style y backgroundImage
+        style={{
+          backgroundColor: '#000000',
+          color: '#ffffff',
+          margin: 0,
+          padding: 0,
+          backgroundImage: `
+            radial-gradient(var(--secondary-bg) 15%, transparent 16%),
+            radial-gradient(var(--secondary-bg) 15%, transparent 16%)
+          `
+        }}
       >
         <Navbar />
         {children}

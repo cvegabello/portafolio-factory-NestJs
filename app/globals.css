@@ -7,6 +7,7 @@
   --accent: #ff5e00;
   --accent-secondary: #0044ff;
   --text-muted: #a0a0a0;
+  --secondary-bg: #0f0f0f;
 }
 
 @theme {
@@ -37,10 +38,11 @@ body {
 }
 
 body {
-  background-color: #000000 !important;
+  background-color: #000000;
   color: #ffffff !important;
   margin: 0;
   padding: 0;
+  
 }
 
 /* Estilos del menú de navegación con efecto hover subrayado animado */

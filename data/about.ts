@@ -33,27 +33,37 @@ export const aboutData: AboutConfig = {
     text: "I was born in Bogotá, Colombia, but have lived and grown in the United States since the age of five. Fluent in both English and Spanish, I navigate both cultures with ease, and I bring the same balance to my ",
     highlighted: ["Academic", "Athletic Life"] 
   },
-  bio: "Mathematics and computer science challenge me to think critically and solve problems creatively, and I consistently rank among the top students at my school. As a proud member of the Class of 2027, my goal is to pursue a degree though I don't know in what yet at one of the best universities in the United States, while continuing to grow as a student-athlete. \n Soccer has been my passion since childhood, and today I play as a left-footed number 10 midfielder. I am not the kind of player who blindly chases every ball; instead, I bring intelligence and vision to the game. \n\n None of this would have been possible without the unconditional support of my parents, who have encouraged me to chase both academic excellence and athletic achievement. Soccer has taught me discipline, patience, and teamwork, while academics have sharpened my curiosity and determination. Together, these shape who I am: a thinker, a creator, and a competitor, ready to take the next step in both my education and athletic journey.",
+  bio: "Mathematics and computer science challenge me to think critically and solve problems creatively, and I consistently rank among the top students at my school. As a proud member of the Class of 2027, my goal is to pursue a degree though I don't know in what yet at one of the best universities in the United States, while continuing to grow as a student-athlete. \n\n None of this would have been possible without the unconditional support of my parents, who have encouraged me to chase both academic excellence and athletic achievement. Soccer has taught me discipline, patience, and teamwork, while academics have sharpened my curiosity and determination. Together, these shape who I am: a thinker, a creator, and a competitor, ready to take the next step in both my education and athletic journey.",
   stats: [
     {
       icon: "MapPin",
-      label: "Location",
+      label: "Current Base",
       text: "Schenectady, NY, USA"
     },
     {
       icon: "Calendar",
-      label: "Age",
-      text: "17 Years Old"
-    },
-    {
-      icon: "Trophy", // Usamos Trophy en vez de Futbol porque Lucide no tiene balón, pero se ve pro
-      label: "Position",
-      text: "Midfielder (CAM)"
+      label: "Born",
+      text: "Jan 12, 2009"
     },
     {
       icon: "Languages",
       label: "Languages",
       text: "Eng (C1) / Spa (Nat)"
+    },
+    {
+      icon: "Brain", // Icono de cerebro para el Major
+      label: "Academic Focus",
+      text: "Computer Science & Finance"
+    },
+    {
+      icon: "GraduationCap", // Gorrito de grado
+      label: "Class Of",
+      text: "2027"
+    },
+    {
+      icon: "Gamepad2", // O 'Music', 'Plane' dependiendo del hobby
+      label: "Interests",
+      text: "Soccer, Chess, Programing"
     }
   ]
 };

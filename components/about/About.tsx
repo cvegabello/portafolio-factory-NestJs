@@ -2,14 +2,34 @@
 
 import Image from 'next/image';
 import { aboutData } from '@/data/about';
-import { MapPin, Calendar, Trophy, Languages } from 'lucide-react';
+// 1. IMPORTAR LOS NUEVOS ICONOS DE LUCIDE
+import { 
+  MapPin, 
+  Calendar, 
+  Trophy, 
+  Languages,
+  Brain,           // <--- Nuevo
+  GraduationCap,   // <--- Nuevo
+  Gamepad2,        // <--- Nuevo (o el que elija para hobbies: Music, Plane, etc.)
+  Home             // <--- Opcional si prefiere casita para residencia
+} from 'lucide-react';
 
+// 2. ACTUALIZAR EL SWITCH
 const getIcon = (iconName: string) => {
+  // Clase base para mantenerlos uniformes
+  const iconClass = "w-5 h-5 text-accent"; 
+
   switch (iconName) {
-    case 'MapPin': return <MapPin className="w-5 h-5 text-accent" />;
-    case 'Calendar': return <Calendar className="w-5 h-5 text-accent" />;
-    case 'Trophy': return <Trophy className="w-5 h-5 text-accent" />;
-    case 'Languages': return <Languages className="w-5 h-5 text-accent" />;
+    case 'MapPin': return <MapPin className={iconClass} />;
+    case 'Calendar': return <Calendar className={iconClass} />;
+    case 'Trophy': return <Trophy className={iconClass} />;
+    case 'Languages': return <Languages className={iconClass} />;
+    
+    // --- NUEVOS ---
+    case 'Brain': return <Brain className={iconClass} />;
+    case 'GraduationCap': return <GraduationCap className={iconClass} />;
+    case 'Gamepad2': return <Gamepad2 className={iconClass} />;
+    
     default: return null;
   }
 };
@@ -34,7 +54,7 @@ export default function About() {
           <div className="w-24 h-1.5 bg-accent rounded-full shadow-[0_0_15px_rgba(249,115,22,0.8)] mt-5!"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2.5fr] gap-12 lg:gap-20 items-center ">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2.0fr] gap-12 lg:gap-20 items-center ">
           
           {/* COLUMNA 1: FOTO CON MARCO CYBER */}
           <div className="flex justify-center lg:justify-end relative order-2 lg:order-1">
@@ -63,7 +83,7 @@ export default function About() {
           {/* COLUMNA 2: TARJETA DE BIO */}
           <div className="order-1 lg:order-2">
             {/* CAMBIO CLAVE 3: Fondo oscuro sólido para que resalte sobre los puntos */}
-            <div className="bg-[#0f0f0f] border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[650px] flex flex-col">
+            <div className="bg-[#1a1512]/90 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[650px] flex flex-col transition-all duration-500 ease-out hover:border-accent hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-[1.02] hover:-translate-y-1">
               
               {/* Título de la tarjeta */}
               <h3 className="relative text-3xl md:text-4xl font-extrabold text-white mt-10! pl-10!">
@@ -72,7 +92,7 @@ export default function About() {
 
               {/* Frase Intro con barra azul */}
               <div className="flex flex-row mt-8! ">
-                <div className="h-22 w-2 bg-accent rounded-full shadow-[0_0_15px_rgba(249,115,22,0.8)] ml-8!"></div>
+                <div className="h-22 w-2 bg-accent-secondary rounded-full shadow-[0_0_15px_rgba(249,115,22,0.8)] ml-8!"></div>
                 <p className="text-lg md:text-xl text-gray-200  font-medium pl-2! pr-6! text-justify">
                     {aboutData.intro.text }<strong className="text-white">{aboutData.intro.highlighted[0] }</strong> and <strong className="text-white">{aboutData.intro.highlighted[1] }</strong>.
                 </p>
@@ -84,18 +104,18 @@ export default function About() {
               </p>
 
               {/* Grid de Datos */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10!">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6! px-10! pb-6!">
                 {aboutData.stats.map((stat, index) => (
                   <div 
                     key={index} 
-                    className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/5 hover:border-accent/30 transition-colors group"
+                    className="flex items-center gap-4 bg-[#0000004d] p-4! rounded-xl border border-white/25 transition-all duration-300 group hover:border-blue-500 hover:bg-blue-600/20 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:-translate-y-1"
                   >
-                    <div className="p-2 bg-[#1a1a1a] rounded-lg text-accent group-hover:text-white transition-colors">
+                    <div className="p-2 rounded-lg text-accent group-hover:text-white transition-colors">
                       {getIcon(stat.icon)}
                     </div>
                     <div>
                       <span className="block text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-0.5">{stat.label}</span>
-                      <span className="text-sm text-white font-bold">{stat.text}</span>
+                      <span className="text-sm text-white font-medium">{stat.text}</span>
                     </div>
                   </div>
                 ))}
