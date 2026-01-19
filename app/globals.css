@@ -37,13 +37,6 @@ body {
   color: #ffffff !important;
 }
 
-body {
-  background-color: #000000;
-  color: #ffffff !important;
-  margin: 0;
-  padding: 0;
-  
-}
 
 /* Estilos del menú de navegación con efecto hover subrayado animado */
 .nav-link {

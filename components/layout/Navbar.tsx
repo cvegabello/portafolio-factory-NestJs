@@ -37,6 +37,36 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  // Función para forzar el scroll suave y cerrar el menú
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault(); // 1. Le decimos al navegador: "Quieto, yo manejo esto".
+    setIsOpen(false);   // 2. Cerramos el menú móvil.
+
+    // 3. Sacamos el ID (quitamos el #)
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+
+    // 4. Si la sección existe, ¡zaz! la mandamos al frente.
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Función exclusiva para el menú de escritorio (PC)
+  const handleDesktopNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault(); // 1. Evita que el navegador cambie la URL de golpe
+    
+    const targetId = href.replace('#', ''); // 2. Saca el ID (ej: "about")
+    const element = document.getElementById(targetId);
+
+    // 3. Busca la sección y la trae suavemente
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
+
   return (
     <>
       {/* 1. BARRA DE NAVEGACIÓN (Desktop & Mobile Header) */}
@@ -67,6 +97,8 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  // --- CAMBIO AQUÍ: Agregamos el onClick ---
+                  onClick={(e) => handleDesktopNav(e, link.href)}
                   className="nav-link text-[15px] font-semibold text-foreground hover:text-accent transition-colors whitespace-nowrap uppercase tracking-wide"
                 >
                   {link.name}
@@ -75,6 +107,8 @@ export default function Navbar() {
               
               <Link
                 href={contactButton.href}
+                // --- CAMBIO AQUÍ TAMBIÉN: En el botón de contacto ---
+                onClick={(e) => handleDesktopNav(e, contactButton.href)}
                 className="nav-link inline-flex items-center justify-center px-8! py-2 border-2 border-accent text-accent rounded-full hover:bg-accent hover:text-black! text-[15px] font-bold transition-all duration-300 whitespace-nowrap ml-8"
               >
                 {contactButton.name}
@@ -151,10 +185,12 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  // CAMBIO 3: 'rounded-xl' (más redondeado) y 'hover:bg-accent/15'
-                  // Esto crea el efecto de "rectangulito" o cápsula al pasar el mouse
-                  className="group flex items-center p-3 rounded-xl transition-all duration-300 hover:bg-accent/15 hover:translate-x-2 border border-transparent hover:border-accent/10"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  // CORRECCIÓN APLICADA AQUÍ ABAJO:
+                  // 1. 'w-full': Ocupa todo el ancho (vital para el toque).
+                  // 2. 'p-4': Más gordito el botón (más fácil de atinar).
+                  // 3. 'active:scale-95' y 'active:bg-accent/20': Feedback inmediato al tocar.
+                  className="w-full group flex items-center p-4 rounded-xl transition-all duration-200 hover:bg-accent/15 hover:translate-x-2 active:scale-95 active:bg-accent/25 border border-transparent hover:border-accent/10"
                 >
                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-accent mr-4 transition-colors group-hover:bg-accent group-hover:text-black shadow-sm shrink-0">
                     {getIcon(link.name)}
@@ -166,10 +202,11 @@ export default function Navbar() {
                 </Link>
               ))}
 
+              {/* BOTÓN DE CONTACTO (También lo arreglamos para que quede igual de bueno) */}
               <Link
                 href={contactButton.href}
-                onClick={() => setIsOpen(false)}
-                className="group flex items-center p-3 rounded-xl transition-all duration-300 hover:bg-accent/15 hover:translate-x-2 mt-2 border border-transparent hover:border-accent/10"
+                onClick={(e) => handleNavClick(e, contactButton.href)}
+                className="w-full group flex items-center p-4 rounded-xl transition-all duration-200 hover:bg-accent/15 hover:translate-x-2 active:scale-95 active:bg-accent/25 mt-2 border border-transparent hover:border-accent/10"
               >
                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-4 transition-colors group-hover:bg-accent group-hover:text-black border border-accent/20 shrink-0">
                   <Send size={20} />

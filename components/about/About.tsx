@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { aboutData } from '@/data/about';
+import SectionTitle from "@/components/ui/SectionTitle"; // 👈 Importación
 // 1. IMPORTAR LOS NUEVOS ICONOS DE LUCIDE
 import { 
   MapPin, 
@@ -17,7 +18,7 @@ import {
 // 2. ACTUALIZAR EL SWITCH
 const getIcon = (iconName: string) => {
   // Clase base para mantenerlos uniformes
-  const iconClass = "w-5 h-5 text-accent"; 
+  const iconClass = "w-7 h-7 text-accent drop-shadow-[0_0_8px_rgba(249,115,22,0.8)]"; 
 
   switch (iconName) {
     case 'MapPin': return <MapPin className={iconClass} />;
@@ -37,57 +38,59 @@ const getIcon = (iconName: string) => {
 export default function About() {
   return (
     // CAMBIO CLAVE 1: 'min-h-screen' asegura altura completa. 'py-32' da mucho aire arriba y abajo.
-    <section id="about" className="relative min-h-screen pt-10! pb-32! bg-black overflow-hidden flex items-center">
+    <section id="about" className="relative min-h-screen pt-10! pb-32! overflow-hidden flex items-center">
+   
       
-      {/* === CAMBIO CLAVE 2: FONDO DE PUNTOS (DOT PATTERN) === */}
-      {/* Esto crea exactamente el efecto de la imagen de referencia */}
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [bg-size:30px_30px] opacity-[0.15]"></div>
-
-      <div className="w-full max-w-[1600px] ml-auto mr-0 px-6 md:px-12 xl:pl-40 xl:pr-12 relative z-10">
+      <div className="max-w-[1700px] items-center  relative z-10">
         
-        {/* Título de Sección Centrado y con espacio */}
-        <div className="flex flex-col items-center mb-10! ml-40! mt-10!">
-          <h2 className="text-4xl! md:text-5xl font-bold text-white tracking-tight ">
-            {aboutData.sectionTitle}
-          </h2>
-          {/* La barrita naranja debajo del título */}
-          <div className="w-24 h-1.5 bg-accent rounded-full shadow-[0_0_15px_rgba(249,115,22,0.8)] mt-5!"></div>
-        </div>
+        <SectionTitle title={aboutData.sectionTitle} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2.0fr] gap-12 lg:gap-20 items-center ">
+        {/***********Inicio del contenedor Grid de dos columnas, priemra columna la foto, segunda columna Quien soy yo */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.0fr_2.0fr] gap-12 lg:gap-10 xl:gap-18 xl:ml-20! items-center ">
           
           {/* COLUMNA 1: FOTO CON MARCO CYBER */}
-          <div className="flex justify-center lg:justify-end relative order-2 lg:order-1">
-            <div className="relative w-[290px]! h-[400px]! md:w-[350px] md:h-[450px]">
+            {/* COLUMNA 1: FOTO CON MARCO CYBER */}
+          <div className="flex justify-center lg:justify-end relative lg:order-1">
+            
+            {/* --- CAMBIO 1: EL NUEVO JEFE (TRIGGER) --- */}
+            {/* Agregamos la clase 'group' aquí en el contenedor padre */}
+            <div className="relative w-[290px]! h-[400px]! md:w-[350px] md:h-[450px] group">
               
-              {/* Esquinas Azules (Brackets) */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-blue-600 z-20"></div>
-              <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-blue-600 z-20"></div>
-              
-              {/* Marco Naranja desplazado */}
-              <div className="absolute top-4 left-4 w-full h-full border-2 border-accent rounded-xl z-0 box-border shadow-[0_0_20px_rgba(249,115,22,0.2)]"></div>
+              {/* --- CAMBIO 2: LA ANIMACIÓN DEL MARCO NARANJA --- */}
+              {/* Agregamos transition y el movimiento al hacer hover */}
+              <div className="absolute top-6 left-6 w-full h-full border-2 border-accent rounded-xl z-0 box-border shadow-[0_0_20px_rgba(249,115,22,0.9)] transition-all duration-500 ease-out group-hover:translate-x-3 group-hover:translate-y-3 group-hover:shadow-[0_0_40px_rgba(249,115,22,0.9)]"></div>
 
-              {/* La Imagen */}
-              <div className="relative w-full h-full rounded-xl overflow-hidden z-10 bg-neutral-900 border border-white/10 shadow-2xl group">
-                 <Image
+              {/* Contenedor de la Foto y Bordes Azules */}
+              {/* (Opcional: Puede quitar la palabra 'group' de las clases de este div si quiere, ya no hace falta) */}
+              <div className="relative w-full h-full z-10 bg-neutral-900 border border-white/10 shadow-2xl rounded-xl">
+
+                {/* Esquinas Azules (sin cambios) */}
+                <div className="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-blue-600 z-20 rounded-tl-xl"></div>
+                <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-blue-600 z-20 rounded-br-xl"></div>
+
+                {/* La Imagen (Sigue reaccionando al grupo con scale-105) */}
+                <Image
                     src={aboutData.image}
                     alt="Profile"
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
                     priority
-                 />
+                />
               </div>
             </div>
           </div>
 
           {/* COLUMNA 2: TARJETA DE BIO */}
-          <div className="order-1 lg:order-2">
+          <div className="order-2">
             {/* CAMBIO CLAVE 3: Fondo oscuro sólido para que resalte sobre los puntos */}
-            <div className="bg-[#1a1512]/90 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[650px] flex flex-col transition-all duration-500 ease-out hover:border-accent hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-[1.02] hover:-translate-y-1">
+            <div className="mx-4! lg:mx-0! bg-[#1a1512]/70 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[650px] flex flex-col transition-all duration-500 ease-out hover:border-accent hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-[1.02] hover:-translate-y-1">
               
               {/* Título de la tarjeta */}
               <h3 className="relative text-3xl md:text-4xl font-extrabold text-white mt-10! pl-10!">
-                {aboutData.greeting.prefix} <span className="text-accent">{aboutData.greeting.name}</span>
+                {aboutData.greeting.prefix} 
+                <span className="text-accent drop-shadow-[0_0_15px_rgba(249,115,22,0.7)] ml-4!">
+                  { aboutData.greeting.name}
+                </span>
               </h3>
 
               {/* Frase Intro con barra azul */}
@@ -104,13 +107,13 @@ export default function About() {
               </p>
 
               {/* Grid de Datos */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6! px-10! pb-6!">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-6! px-10! pb-6!">
                 {aboutData.stats.map((stat, index) => (
                   <div 
                     key={index} 
                     className="flex items-center gap-4 bg-[#0000004d] p-4! rounded-xl border border-white/25 transition-all duration-300 group hover:border-blue-500 hover:bg-blue-600/20 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:-translate-y-1"
                   >
-                    <div className="p-2 rounded-lg text-accent group-hover:text-white transition-colors">
+                    <div className="p-1! rounded-lg text-accent group-hover:text-white transition-colors">
                       {getIcon(stat.icon)}
                     </div>
                     <div>
@@ -125,6 +128,7 @@ export default function About() {
           </div>
 
         </div>
+        {/***********Final del contenedor Grid de dos columnas, priemra columna la foto, segunda columna Quien soy yo */}
       </div>
     </section>
   );

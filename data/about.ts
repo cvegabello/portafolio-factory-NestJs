@@ -33,7 +33,7 @@ export const aboutData: AboutConfig = {
     text: "I was born in Bogotá, Colombia, but have lived and grown in the United States since the age of five. Fluent in both English and Spanish, I navigate both cultures with ease, and I bring the same balance to my ",
     highlighted: ["Academic", "Athletic Life"] 
   },
-  bio: "Mathematics and computer science challenge me to think critically and solve problems creatively, and I consistently rank among the top students at my school. As a proud member of the Class of 2027, my goal is to pursue a degree though I don't know in what yet at one of the best universities in the United States, while continuing to grow as a student-athlete. \n\n None of this would have been possible without the unconditional support of my parents, who have encouraged me to chase both academic excellence and athletic achievement. Soccer has taught me discipline, patience, and teamwork, while academics have sharpened my curiosity and determination. Together, these shape who I am: a thinker, a creator, and a competitor, ready to take the next step in both my education and athletic journey.",
+  bio: "Mathematics and computer science challenge me to think critically and solve problems creatively, and I consistently rank among the top students at my school. My goal is to pursue a degree though I don't know in what yet at one of the best universities in the United States, while continuing to grow as a student-athlete. \n\n None of this would have been possible without the unconditional support of my parents, who have encouraged me to chase both academic excellence and athletic achievement. Soccer has taught me discipline, patience, and teamwork, while academics have sharpened my curiosity and determination. Together, these shape who I am: a thinker, a creator, and a competitor, ready to take the next step in both my education and athletic journey.",
   stats: [
     {
       icon: "MapPin",
@@ -57,8 +57,8 @@ export const aboutData: AboutConfig = {
     },
     {
       icon: "GraduationCap", // Gorrito de grado
-      label: "Class Of",
-      text: "2027"
+      label: "School/Class",
+      text: "Schalmont High School 2027"
     },
     {
       icon: "Gamepad2", // O 'Music', 'Plane' dependiendo del hobby

@@ -29,21 +29,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" style={{ backgroundColor: '#000000', color: '#ffffff' }}>
+    <html lang="es">
       <body
-        className={`${openSans.variable} ${montserrat.variable} ${firaCode.variable} antialiased`}
-        // Corregida la sintaxis del objeto style y backgroundImage
-        style={{
-          backgroundColor: '#000000',
-          color: '#ffffff',
-          margin: 0,
-          padding: 0,
-          backgroundImage: `
-            radial-gradient(var(--secondary-bg) 15%, transparent 16%),
-            radial-gradient(var(--secondary-bg) 15%, transparent 16%)
-          `
-        }}
+        // 1. AGREGUÉ 'bg-black' aquí para asegurar que la base sea negra
+        className={`${openSans.variable} ${montserrat.variable} ${firaCode.variable} antialiased bg-black`} 
       >
+        
+        {/* --- INICIO DEL PATRÓN DE FONDO --- */}
+        <div 
+          className="fixed inset-0 z-[-1] pointer-events-none opacity-20"
+          style={{
+            // Aquí está su patrón rojo (#ff0000)
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23ff0000' fill-opacity='0.6'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}
+        ></div>
+        {/* --- FIN DEL PATRÓN DE FONDO --- */}
+
         <Navbar />
         {children}
       </body>
