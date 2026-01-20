@@ -38,7 +38,7 @@ const getIcon = (iconName: string) => {
 export default function About() {
   return (
     // CAMBIO CLAVE 1: 'min-h-screen' asegura altura completa. 'py-32' da mucho aire arriba y abajo.
-    <section id="about" className="relative min-h-screen pt-10! pb-32! overflow-hidden flex items-center">
+    <section id="about" className="relative min-h-screen pt-6! overflow-hidden flex items-center">
    
       
       <div className="max-w-[1700px] items-center  relative z-10">
@@ -86,7 +86,7 @@ export default function About() {
             <div className="mx-4! lg:mx-0! bg-[#1a1512]/70 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[650px] flex flex-col transition-all duration-500 ease-out hover:border-accent hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-[1.02] hover:-translate-y-1">
               
               {/* Título de la tarjeta */}
-              <h3 className="relative text-3xl md:text-4xl font-extrabold text-white mt-10! pl-10!">
+              <h3 className="relative text-3xl md:text-4xl font-extrabold text-white mt-6! pl-10!">
                 {aboutData.greeting.prefix} 
                 <span className="text-accent drop-shadow-[0_0_15px_rgba(249,115,22,0.7)] ml-4!">
                   { aboutData.greeting.name}
@@ -94,7 +94,7 @@ export default function About() {
               </h3>
 
               {/* Frase Intro con barra azul */}
-              <div className="flex flex-row mt-8! ">
+              <div className="flex flex-row mt-6! ">
                 <div className="h-22 w-2 bg-accent-secondary rounded-full shadow-[0_0_15px_rgba(249,115,22,0.8)] ml-8!"></div>
                 <p className="text-lg md:text-xl text-gray-200  font-medium pl-2! pr-6! text-justify">
                     {aboutData.intro.text }<strong className="text-white">{aboutData.intro.highlighted[0] }</strong> and <strong className="text-white">{aboutData.intro.highlighted[1] }</strong>.
@@ -107,7 +107,7 @@ export default function About() {
               </p>
 
               {/* Grid de Datos */}
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-6! px-10! pb-6!">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-6! px-10! ">
                 {aboutData.stats.map((stat, index) => (
                   <div 
                     key={index} 

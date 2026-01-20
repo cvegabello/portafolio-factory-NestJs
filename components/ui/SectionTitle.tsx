@@ -8,7 +8,7 @@ interface SectionTitleProps {
 export default function SectionTitle({ title, className = "" }: SectionTitleProps) {
   return (
     // Juntamos las clases base con las que vengan extra (className)
-    <div className={`flex flex-col items-center mb-10! mt-10! ml-0 lg:ml-40 ${className}`}>
+    <div className={`flex flex-col items-center mb-10! mt-6! ml-0 lg:ml-40 ${className}`}>
       
       {/* El Título */}
       <h2 className="text-4xl! md:text-5xl font-bold text-white tracking-tight text-center lg:text-left">

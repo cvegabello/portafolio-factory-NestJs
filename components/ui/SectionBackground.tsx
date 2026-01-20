@@ -1,34 +1,33 @@
-// Archivo: src/components/ui/SectionBackground.tsx
 import React from 'react';
 
 interface SectionBackgroundProps {
-  img?: string; // Opcional: puede venir o no venir
-  overlayClass?: string; // Opcional: por si quiere más o menos oscuridad (default: bg-black/80)
+  img?: string;
+  overlayClass?: string;
 }
 
 export default function SectionBackground({ 
   img, 
-  overlayClass = "bg-black/80 backdrop-blur-[1px]" // Valor por defecto igual al que usted tenía
+  // CAMBIO 1: Reemplazamos el color plano por el gradiente original (de 0.65 a 0.75)
+  // Usamos clases arbitrarias de Tailwind [] para ser exactos con su CSS
+  overlayClass = "bg-gradient-to-b from-[rgba(0,0,0,0.65)] to-[rgba(0,0,0,0.75)]" 
 }: SectionBackgroundProps) {
   
-  // LA MAGIA: Si no mandan imagen, el componente se autodestruye (no pinta nada)
-  // Esto permite que se vea el fondo rojo global "Death Star" si no hay foto específica.
   if (!img) return null;
 
   return (
     <div 
-      className="absolute inset-0 z-0 pointer-events-none" // pointer-events-none para que no bloquee clics
+      className="absolute inset-0 z-0 pointer-events-none"
       style={{
           backgroundImage: `url('${img}')`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed' // El efecto Parallax elegante
+          backgroundPosition: 'top center',
+          // CAMBIO 2: La clave del éxito. Cambiamos 'scroll' por 'fixed'
+          backgroundAttachment: 'fixed' 
       }}
     >
-      {/* La capa oscura para que el texto se lea bien */}
+      {/* La capa oscura con el gradiente exacto */}
       <div className={`absolute inset-0 ${overlayClass}`}></div>
     </div>
   );
 }
-
