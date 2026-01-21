@@ -85,6 +85,22 @@ export const academicsData: AcademicsData = {
       school: "Shaker High School",
       description: "Inicio de profundización en ciencias y matemáticas avanzadas.",
       iconName: "BookOpen"
+    },
+    {
+      id: 4,
+      year: "2022",
+      title: "Sophomore Year (10th)",
+      school: "Shaker High School",
+      description: "Inicio de profundización en ciencias y matemáticas avanzadas.",
+      iconName: "BookOpen"
+    },
+    {
+      id: 5,
+      year: "2021",
+      title: "Sophomore Year (10th)",
+      school: "Shaker High School",
+      description: "Inicio de profundización en ciencias y matemáticas avanzadas.",
+      iconName: "BookOpen"
     }
   ],
 

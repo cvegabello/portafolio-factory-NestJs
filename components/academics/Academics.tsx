@@ -4,6 +4,7 @@
 import { useState, Fragment } from 'react';
 import SectionTitle from "@/components/ui/SectionTitle";
 import SectionBackground from "@/components/ui/SectionBackground";
+import Timeline from "@/components/ui/TimeLine"; // <--- IMPORTANTE
 import { academicsData } from '@/data/academics'; // 👈 IMPORTAMOS LA DATA
 import { 
   BookOpen, 
@@ -76,85 +77,11 @@ export default function Academics() {
             ))}
         </div>
         
-        {/* --- 2. CÁPSULA DEL TIEMPO (NEUMORFISMO + SCROLL) --- */}
-        {/* CAMBIO 1: Agregamos 'px-4 md:px-8' al wrapper principal para separarlo de los bordes de la pantalla */}
-        <div className="mb-32 relative w-full max-w-5xl mx-auto px-4 md:px-8">
+        {/* --- 2. CÁPSULA DEL TIEMPO (VERSIÓN FINAL: ICONOS CENTRALES ACTIVOS) --- */}
+        
+        <div className="mb-32 w-full flex justify-center px-4">
+          <Timeline items={academicsData.timeline} />
           
-          <div className="text-center mb-12">
-             <h3 className="text-3xl font-bold text-white flex items-center justify-center gap-3">
-               <span className="text-accent">My Path.</span> {academicsData.timelineTitle}
-            </h3>
-          </div>
-
-          {/* LA CÁPSULA (CONTENEDOR PRINCIPAL) */}
-          <div className="
-            relative w-full h-[600px] bg-[#252525] rounded-3xl p-4 md:p-8 
-            overflow-y-auto scrollbar-thin scrollbar-thumb-accent scrollbar-track-[#1a1a1a]
-            shadow-[inset_10px_10px_20px_#1a1a1a,inset_-10px_-10px_20px_#303030]
-            border border-white/5
-          ">
-
-            {/* LÍNEA CENTRAL */}
-            <div className="absolute left-4 md:left-1/2 top-8 bottom-8 w-1 md:-translate-x-1/2 rounded-full bg-[#1a1a1a] shadow-[inset_2px_2px_5px_#000] z-0"></div>
-
-            <div className="relative z-10 flex flex-col gap-8 py-8">
-              {academicsData.timeline?.map((item, index) => {
-                const isEven = index % 2 === 0;
-                
-                return (
-                  <div key={item.id} className={`flex flex-col md:flex-row items-start w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                    
-                    {/* --- LADO DEL CONTENIDO --- */}
-                    {/* CAMBIO 2: Quitamos el 'md:px-12' que causaba el desorden. Ahora es limpio. */}
-                    <div className="w-full md:w-1/2 px-4 md:px-0 flex flex-col items-center md:block">
-                      
-                      {/* TARJETA NEUMÓRFICA 3D */}
-                      <div className={`
-                        w-full max-w-[300px] p-5 rounded-2xl bg-[#252525] transition-transform duration-300 hover:scale-[1.02]
-                        shadow-[8px_8px_16px_#1a1a1a,-8px_-8px_16px_#303030]
-                        mb-8 md:mb-0  /* Espacio vertical en celular */
-                        
-                        /* CAMBIO 3: LÓGICA DE CENTRADO CORRECTA */
-                        ${isEven 
-                          ? 'md:ml-auto md:mr-12'  /* IZQUIERDA: Se pega a la derecha y empuja 12 unidades desde el centro */
-                          : 'md:mr-auto md:ml-12'  /* DERECHA: Se pega a la izquierda y empuja 12 unidades desde el centro */
-                        }
-                      `}>
-                        
-                        {/* HEADER: Icono + Año */}
-                        <div className="flex justify-between items-start mb-3">
-                          <div className="w-10 h-10 flex items-center justify-center rounded-full text-accent bg-[#252525] shadow-[inset_3px_3px_6px_#1a1a1a,inset_-3px_-3px_6px_#303030]">
-                            {getIcon(item.iconName)}
-                          </div>
-                          <span className="text-[10px] font-mono font-bold text-accent/80 bg-[#252525] px-2 py-1 rounded-md shadow-[2px_2px_5px_#1a1a1a,-2px_-2px_5px_#303030]">
-                            {item.year}
-                          </span>
-                        </div>
-
-                        {/* TEXTOS */}
-                        <h4 className="text-base font-bold text-gray-200 leading-tight mb-1">{item.title}</h4>
-                        <p className="text-xs text-gray-500 leading-relaxed mb-2">{item.description}</p>
-                        
-                        {/* TAG COLEGIO */}
-                        <div className="flex items-center gap-1.5 text-[10px] text-gray-600 font-medium">
-                          <GraduationCap size={12} /> {item.school}
-                        </div>
-
-                      </div>
-                    </div>
-
-                    {/* --- NODO CENTRAL (BOLITA) --- */}
-                    {/* Ajuste fino para que la bolita quede centrada con la parte superior de la tarjeta */}
-                    <div className="absolute left-4 md:left-1/2 -translate-x-1/2 mt-5 w-4 h-4 rounded-full bg-accent border-4 border-[#252525] shadow-[4px_4px_8px_#1a1a1a,-4px_-4px_8px_#303030] z-20"></div>
-
-                    {/* --- LADO VACÍO --- */}
-                    <div className="hidden md:block w-1/2"></div>
-                    
-                  </div>
-                );
-              })}
-            </div>
-          </div>
         </div>
        
       </div>
