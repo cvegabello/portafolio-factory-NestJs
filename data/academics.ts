@@ -53,9 +53,10 @@ export const academicsData: AcademicsData = {
   stats: [
     { id: 1, value: "3.8", label: "Cumulative GPA", iconName: "BookOpen", color: "blue" },
     { id: 2, value: "1250", label: "SAT Score", iconName: "PenTool", color: "orange" },
-    { id: 3, value: "2025", label: "Graduation Year", iconName: "GraduationCap", color: "blue" },
+    { id: 3, value: "2027", label: "Graduation Year", iconName: "GraduationCap", color: "blue" },
     { id: 4, value: "CompSci", label: "Intended Major", iconName: "Laptop", color: "orange" },
-    { id: 5, value: "AP CS A", label: "Relevant Course", iconName: "Code", color: "blue" },
+    { id: 5, value: "Finaces", label: "Intended Minor", iconName: "Code", color: "blue" },
+    { id: 6, value: "AP CS A", label: "Relevant Course", iconName: "Code", color: "blue" },
   ],
 
   // --- NUEVA DATA DEL TIMELINE ---

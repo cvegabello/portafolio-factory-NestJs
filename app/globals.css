@@ -63,3 +63,22 @@ body {
 .nav-link:hover::after {
   width: 100%;
 }
+
+/* --- SCROLLBAR PERSONALIZADO PARA LA CÁPSULA --- */
+
+/* Ancho de la barra */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* El riel (fondo oscuro) */
+.scrollbar-track-\[\#1a1a1a\]::-webkit-scrollbar-track {
+  background: #1a1a1a; 
+  border-radius: 10px;
+}
+
+/* La manija (el color naranja que se mueve) */
+.scrollbar-thumb-accent::-webkit-scrollbar-thumb {
+  background: #f97316; /* Naranja (Asegúrese que combine con su color accent) */
+  border-radius: 10px;
+}
