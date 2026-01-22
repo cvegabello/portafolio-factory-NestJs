@@ -125,8 +125,8 @@ export const academicsData: AcademicsData = {
       title: "Resume & Honors",
       iconName: "Trophy",
       files: [
-        { name: "Official Athlete Resume", url: "/assets/docs/resume.pdf", type: "download" },
-        { name: "Honor Roll Certificate", url: "/assets/docs/honor-roll.pdf", type: "download" }
+        { name: "Official Student Resume", url: "/docs/ResumeSantiagoVega.pdf", type: "download" },
+        { name: "Honor Roll Certificate", url: "/docs/honor-roll.pdf", type: "download" }
       ]
     },
     {
