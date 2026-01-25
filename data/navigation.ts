@@ -3,7 +3,7 @@ export const navLinks = [
   { name: "Profile", href: "#about" },
   { name: "Academics", href: "#academics" },
   { name: "Athletics", href: "#athletics" },
-  { name: "Projects", href: "#portfolio" },
+  { name: "Projects", href: "#projects" },
   { name: "References", href: "#testimonials" },
   { name: "Moments", href: "#gallery" },
 ];

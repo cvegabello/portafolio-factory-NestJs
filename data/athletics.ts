@@ -28,5 +28,44 @@ export const athleticsData = {
       { id: 5, label: "Club", value: "Elite FC", icon: "Trophy" },
       { id: 6, label: "Location", value: "Bogotá, COL", icon: "MapPin" },
     ]
+  },
+
+  trainingCarousel: {
+    title: "MORE ACTION & TRAINING",
+    subtitle: "More Highlights, Technical drills, agility & speed sessions.",
+    videos: [
+      { 
+        id: 1, 
+        title: "Technical Drills", 
+        description: "Precision & Control", 
+        // Use un video real o de prueba
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      },
+      { 
+        id: 2, 
+        title: "Agility Session", 
+        description: "Speed & ladder drills", 
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      },
+      { 
+        id: 3, 
+        title: "Match Highlights", 
+        description: "Vs. Rivals FC (2 Goals)", 
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      },
+      { 
+        id: 4, 
+        title: "Strength Training", 
+        description: "Gym & Core work", 
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      },
+      { 
+        id: 5, 
+        title: "Tactical Analysis", 
+        description: "Positional play review", 
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      },
+    ]
   }
+  
 };
