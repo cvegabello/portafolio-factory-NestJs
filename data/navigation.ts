@@ -4,8 +4,8 @@ export const navLinks = [
   { name: "Academics", href: "#academics" },
   { name: "Athletics", href: "#athletics" },
   { name: "Projects", href: "#projects" },
-  { name: "References", href: "#testimonials" },
-  { name: "Moments", href: "#gallery" },
+  { name: "References", href: "#references" },
+  { name: "Moments", href: "#moments" },
 ];
 
 export const contactButton = {

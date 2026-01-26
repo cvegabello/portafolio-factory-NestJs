@@ -3,42 +3,28 @@
 import React, { useState } from 'react';
 import { motion, PanInfo } from 'framer-motion';
 import { 
-  ChevronLeft, ChevronRight, Github, ExternalLink, 
-  Code, Database, Cpu, Globe, Layers, Zap, Hand, Brain, Lock
+  ChevronLeft, ChevronRight, Hand, Quote, Star, User
 } from 'lucide-react';
 
-// --- DEFINICIÓN DE TIPOS ---
-interface ProjectItem {
+// --- DEFINICIÓN DE TIPOS (Adaptado a Referencias) ---
+interface ReferenceItem {
   id: number;
-  title: string;
-  image: string;
-  description: string;
-  techStack: string[];
-  demoUrl: string;
-  codeUrl: string;
+  name: string;
+  role: string;
+  avatar: string;
+  quote: string;
+  signature: string;
 }
 
 interface CarouselProps {
-  items: ProjectItem[];
+  items: ReferenceItem[];
 }
 
-const getTechIcon = (tech: string) => {
-  switch (tech.toLowerCase()) {
-    case 'react': return <Globe size={24} />;
-    case 'node': return <Layers size={24} />;
-    case 'python': return <Code size={24} />;
-    case 'database': return <Database size={24} />;
-    case 'cpu': return <Cpu size={24} />;
-    case 'brain': return <Brain size={24} />;
-    case 'lock': return <Lock size={24} />;
-    default: return <Zap size={24} />;
-  }
-};
-
-export default function ProjectsCarousel({ items }: CarouselProps) {
+export default function ReferencesCarousel({ items }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
 
+  // --- NAVEGACIÓN (Igual que Projects) ---
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
     setFlippedCards({}); 
@@ -58,6 +44,7 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
     setFlippedCards(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
+  // --- LÓGICA VISUAL ---
   const getVisibleItems = () => {
     const total = items.length;
     const prev = (currentIndex - 1 + total) % total;
@@ -67,6 +54,7 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
 
   const { prev, current, next } = getVisibleItems();
 
+  // --- SWIPE ---
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
@@ -130,7 +118,7 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
                 >
                   
                   {/* ================================================= */}
-                  {/* CARA FRONTAL (FRONT) */}
+                  {/* CARA FRONTAL (AVATAR + NOMBRE) */}
                   {/* ================================================= */}
                   <div 
                     className={`
@@ -140,14 +128,13 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
                     style={{ 
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
-                      /* FIX SAFARI: Empujamos la cara 1px hacia el frente para separarla de la de atrás */
-                      transform: 'translateZ(1px)' 
+                      transform: 'translateZ(1px)' // FIX SAFARI
                     }}
                     onClick={() => position === 'center' && toggleFlip(item.id)}
                   >
                      <div className="relative w-full h-full group">
                         
-                        {/* Borde Neón */}
+                        {/* BORDE NEÓN */}
                         <div className={`
                           absolute -inset-[4px] rounded-[24px] z-[-10]
                           bg-gradient-to-br from-[#ff5e00] via-[#0044ff] to-[#ff5e00]
@@ -156,36 +143,43 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
                           ${position === 'center' ? 'group-hover:blur-[10px] group-hover:shadow-[0_0_40px_rgba(255,94,0,0.6)]' : ''}
                         `}></div>
 
-                        {/* CAPA DEL MEDIO (SOLID BLACK) */}
+                        {/* CAPA DEL MEDIO (Negro Sólido) */}
                         <div className="absolute inset-0 bg-[#050505] rounded-[20px] z-[-1]"></div>
 
-                        {/* CONTENIDO */}
-                        <div className="relative w-full h-full rounded-[20px] overflow-hidden flex flex-col border border-white/5 z-10">
+                        {/* CONTENIDO FRONTAL */}
+                        <div className="relative w-full h-full rounded-[20px] overflow-hidden flex flex-col border border-white/5 z-10 bg-[#050505]">
                             
-                            <div className="h-[55%] w-full relative flex items-center justify-center px-8! py-6! bg-[#050505]">
-                              <div className="w-full h-full relative overflow-hidden rounded-[18px] border border-white/20 shadow-lg group-hover:border-accent/40 transition-colors">
-                                  {item.image ? (
-                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                            {/* 1. SECCIÓN SUPERIOR: AVATAR CIRCULAR */}
+                            <div className="h-[60%] w-full relative flex items-center justify-center p-6!">
+                               {/* Círculo del Avatar */}
+                               <div className="w-30 h-30 md:w-40 md:h-40 rounded-full border-2 border-white/20 p-1 shadow-[0_0_20px_rgba(255,255,255,0.1)] group-hover:border-accent/50 transition-colors duration-300 relative overflow-hidden">
+                                  {item.avatar ? (
+                                     <img src={item.avatar} alt={item.name} className="w-full h-full object-cover rounded-full" />
                                   ) : (
-                                    <div className="w-full h-full flex items-center justify-center bg-[#111] text-gray-600"><Code size={48} /></div>
+                                     <div className="w-full h-full bg-[#111] rounded-full flex items-center justify-center text-gray-500">
+                                       <User size={60} />
+                                     </div>
                                   )}
-                                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 to-transparent pointer-events-none"></div>
-                              </div>
+                               </div>
+                               
+                               {/* Brillo de fondo tras el avatar */}
+                               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-accent/20 blur-[50px] -z-10 rounded-full"></div>
                             </div>
 
-                            <div className="flex-1 flex flex-col items-center p-4! text-center bg-gradient-to-b from-[#050505] to-[#0a0a15]">
-                              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6! tracking-tight leading-none">
-                                {item.title}
+                            {/* 2. SECCIÓN INFERIOR: INFO */}
+                            <div className="flex-1 flex flex-col items-center p-4! text-center">
+                              
+                              {/* Nombre */}
+                              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">
+                                {item.name}
                               </h3>
 
-                              <div className="flex gap-4! mb-4!">
-                                  {item.techStack.map((tech, i) => (
-                                    <div key={i} className="p-2! rounded-full bg-white/10 text-accent border border-white/10">
-                                      {getTechIcon(tech)}
-                                    </div>
-                                  ))}
-                              </div>
+                              {/* Cargo (En Naranja/Accent) */}
+                              <span className="text-accent font-bold tracking-widest text-sm md:text-base uppercase mb-4">
+                                {item.role}
+                              </span>
 
+                              {/* Línea y Tap to Flip */}
                               <div className="mt-auto w-full px-12 flex flex-col items-center">
                                   <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-3"></div>
                                   <div className="flex items-center mt-10! gap-2 text-white-500 text-[14px]  tracking-widest animate-pulse font-medium">
@@ -198,7 +192,7 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
                   </div>
 
                   {/* ================================================= */}
-                  {/* CARA TRASERA (BACK) */}
+                  {/* CARA TRASERA (TESTIMONIO) */}
                   {/* ================================================= */}
                   <div 
                     className={`
@@ -208,14 +202,13 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
                     style={{ 
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
-                      /* FIX SAFARI: Rotamos y ADEMÁS empujamos 1px hacia afuera. Vital. */
-                      transform: 'rotateY(180deg) translateZ(1px)'
+                      transform: 'rotateY(180deg) translateZ(1px)' // FIX SAFARI
                     }}
                     onClick={() => position === 'center' && toggleFlip(item.id)}
                   >
                      <div className="relative w-full h-full group">
                         
-                        {/* Borde Neón Trasero */}
+                        {/* BORDE NEÓN TRASERO */}
                         <div className={`
                           absolute -inset-[4px] rounded-[24px] z-[-10]
                           bg-gradient-to-br from-accent via-purple-600 to-blue-600
@@ -224,49 +217,47 @@ export default function ProjectsCarousel({ items }: CarouselProps) {
                           ${position === 'center' ? 'group-hover:blur-[10px] group-hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]' : ''}
                         `}></div>
 
-                        {/* CAPA DEL MEDIO TRASERA */}
+                        {/* CAPA DEL MEDIO TRASERA (Negro Sólido) */}
                         <div className="absolute inset-0 bg-[#080808] rounded-[20px] z-[-1]"></div>
 
                         {/* CONTENIDO TRASERO */}
-                        <div className="relative w-full h-full rounded-[20px] overflow-hidden flex flex-col p-8 md:p-10 justify-center items-center text-center border border-white/5 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-10">
+                        <div className="relative w-full h-full rounded-[20px] overflow-hidden flex flex-col px-8! items-center text-center border border-white/5 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-10 bg-[#080808]">
                             
-                            <h3 className="text-xl font-bold text-white mb-8!">About the Project</h3>
+                            {/* 1. Icono Comillas (Moderno Gradiente) */}
+                            <div className="top-4!">
+                               <Quote 
+                                  size={48} 
+                                  className="text-transparent fill-current" 
+                                  style={{ stroke: 'url(#gradient-quote)', fill: 'url(#gradient-quote)' }} // Truco SVG si se quiere, o simple color
+                                />
+                                {/* Truco simple para gradiente en icono Lucide: Usamos text-clip o clases Tailwind */}
+                                <div className="absolute top-10! left-1/2 -translate-x-1/2 w-18! h-18! bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur-[10px] opacity-40"></div>
+                                <Quote size={50} className="text-blue-500 fill-blue-500/20" />
+                            </div>
                             
-                            <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8! px-8! italic">
-                              "{item.description}"
+                            {/* 2. Cita Textual */}
+                            <p className="text-white/90 text-lg md:text-xl leading-relaxed font-serif italic mt-12! mb-8!">
+                              "{item.quote}"
                             </p>
 
-                            <div className="flex gap-4 w-full justify-center">
-                              <a 
-                                href={item.codeUrl} target="_blank" rel="noreferrer"
-                                className="relative z-50 flex items-center gap-2 px-8! py-3! rounded-xl 
-                                bg-[#1a1a1a] border border-white/10 text-white text-sm font-bold shadow-lg
-                                  transition-all duration-300
-                                  hover:border-accent hover:text-accent hover:bg-white/5 hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]
-                                  cursor-pointer"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                  <Github size={18} /> Code
-                              </a>
-                              <a 
-                                href={item.demoUrl} target="_blank" rel="noreferrer"
-                                className="relative z-50 flex items-center gap-2! px-8! py-3! rounded-xl 
-                                bg-accent text-black bg- text-sm font-bold shadow-[0_0_20px_rgba(249,115,22,0.4)]
-                                  transition-all duration-300
-                                  hover:bg-white hover:text-black hover:shadow-[0_0_30px_rgba(255,255,255,0.8)]
-                                  cursor-pointer"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                  <ExternalLink size={18} /> Demo
-                              </a>
+                            {/* 3. Estrellas (5 Estrellas) */}
+                            <div className="flex gap-1 mb-8">
+                               {[...Array(5)].map((_, i) => (
+                                  <Star key={i} size={20} className="text-yellow-500 fill-yellow-500" />
+                               ))}
                             </div>
 
-                            <div className="mt-auto w-full flex flex-col items-center">
-                                <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-3"></div>
-                                <div className="flex items-center mt-10! gap-2 text-white-500 text-[14px]  tracking-widest animate-pulse font-medium">
-                                  <Hand size={14} /> Tap to Flip
-                                </div>
+                            {/* 4. Firma (Nombre Abreviado) */}
+                            <div className="mt-auto! text-blue-400 font-mono text-sm tracking-widest uppercase">
+                               {item.signature}
                             </div>
+                            
+                            {/* Botón volver (oculto visualmente pero útil para saber) */}
+                            <div className="mt-4! mb-2! text-white-500 text-[13px] tracking-widest animate-pulse font-medium">
+                                Tap to flip back
+                            </div>
+                           
+
                         </div>
                      </div>
                   </div>
