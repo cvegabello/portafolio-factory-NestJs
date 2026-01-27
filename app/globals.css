@@ -17,7 +17,7 @@
   --color-accent: var(--accent);
   --color-accent-secondary: var(--accent-secondary);
   --color-muted: var(--text-muted);
-  
+
   --font-family-heading: var(--font-heading), sans-serif;
   --font-family-body: var(--font-body), sans-serif;
   --font-family-mono: var(--font-mono), monospace;
@@ -37,7 +37,6 @@ body {
   color: #ffffff !important;
 }
 
-
 /* Estilos del menú de navegación con efecto hover subrayado animado */
 .nav-link {
   position: relative;
@@ -45,7 +44,7 @@ body {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -57,7 +56,6 @@ body {
 
 .nav-link:hover {
   color: var(--accent);
-  
 }
 
 .nav-link:hover::after {
@@ -73,7 +71,7 @@ body {
 
 /* El riel (fondo oscuro) */
 .scrollbar-track-\[\#1a1a1a\]::-webkit-scrollbar-track {
-  background: #1a1a1a; 
+  background: #1a1a1a;
   border-radius: 10px;
 }
 
@@ -81,4 +79,28 @@ body {
 .scrollbar-thumb-accent::-webkit-scrollbar-thumb {
   background: #f97316; /* Naranja (Asegúrese que combine con su color accent) */
   border-radius: 10px;
+}
+
+/* Arreglo para el Autocomplete feo de Chrome/Edge */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  /* El truco: Una sombra interna gigante del color de tu fondo (#111) */
+  -webkit-box-shadow: 0 0 0 30px #111 inset !important;
+  /* Forzamos el color del texto a blanco */
+  -webkit-text-fill-color: white !important;
+  /* Mantenemos el borde que ya definimos */
+  border-bottom: 2px solid #374151 !important; /* border-gray-700 */
+  caret-color: white !important;
+}
+
+/* Opcional: Si el input está enfocado y tiene autocompletado, mantener el borde naranja */
+input:focus:-webkit-autofill,
+textarea:focus:-webkit-autofill {
+  border-bottom: 2px solid #ffaa00 !important; /* Tu color accent aprox */
 }
