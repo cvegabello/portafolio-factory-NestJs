@@ -31,6 +31,7 @@ const getIcon = (iconName: string) => {
     Footprints,
     Shield,
     Globe,
+    Play,
   };
   const IconComponent = icons[iconName];
   return IconComponent ? <IconComponent size={20} /> : <User size={20} />;

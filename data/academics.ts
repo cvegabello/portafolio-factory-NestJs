@@ -81,9 +81,9 @@ export const academicsData: AcademicsData = {
     },
     {
       id: 5,
-      value: "Finances",
-      label: "Intended Minor",
-      iconName: "TrendingUp",
+      value: "English & Spanish",
+      label: "Languages",
+      iconName: "Languages",
       color: "blue",
     },
     {

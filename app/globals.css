@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* <--- Esto hace que el <a> se deslice bonito */
+}
+
 html,
 body {
   width: 100%;

@@ -17,6 +17,7 @@ import {
   Trophy,
   Video,
   LucideIcon,
+  Languages,
 } from "lucide-react";
 
 // Función auxiliar para iconos de las estadísticas
@@ -32,6 +33,7 @@ const getIcon = (iconName: string) => {
     FileText,
     Trophy,
     Video,
+    Languages,
   };
   const IconComponent = icons[iconName];
   return IconComponent ? <IconComponent size={24} /> : <BookOpen size={24} />;
