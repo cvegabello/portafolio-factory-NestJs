@@ -2,8 +2,9 @@
 
 import ContactInfo from "@/components/ui/ContactInfo";
 import ContactForm from "@/components/ui/ContactForm";
-import { motion } from "framer-motion";
+// Borramos la importación directa de motion porque ya la usa ScrollAnimation
 import SectionTitle from "@/components/ui/SectionTitle";
+import ScrollAnimation from "@/components/ui/ScrollAnimation"; // 👈 Importamos nuestra arma secreta
 import { contactData } from "@/data/contact";
 
 export default function Contact() {
@@ -13,25 +14,28 @@ export default function Contact() {
       className="relative min-h-screen! bg-[#050505] py-20! px-4! sm:px-6! lg:px-8! overflow-hidden"
     >
       <div className="max-w-7xl mx-auto!">
-        <SectionTitle title={contactData.sectionTitle} />
+        {/* El título puede entrar desde arriba o abajo, como prefiera */}
+        <ScrollAnimation direction="up">
+          <SectionTitle title={contactData.sectionTitle} />
+        </ScrollAnimation>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid mt-18!  grid-cols-1 lg:grid-cols-2 gap-12! lg:gap-16! items-start"
-        >
-          {/* Left Column: Contact Info */}
+        {/* 👇 OJO: Cambié motion.div por un div normal. 
+            El grid ya no se anima, se animan los de adentro. */}
+        <div className="grid mt-18! grid-cols-1 lg:grid-cols-2 gap-12! lg:gap-16! items-start">
+          {/* COLUMNA IZQUIERDA: Entra moviéndose hacia la DERECHA (direction="right") */}
           <div className="w-full">
-            <ContactInfo />
+            <ScrollAnimation direction="right" className="h-full">
+              <ContactInfo />
+            </ScrollAnimation>
           </div>
 
-          {/* Right Column: Contact Form */}
+          {/* COLUMNA DERECHA: Entra moviéndose hacia la IZQUIERDA (direction="left") */}
           <div className="w-full">
-            <ContactForm />
+            <ScrollAnimation direction="left" delay={0.2} className="h-full">
+              <ContactForm />
+            </ScrollAnimation>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

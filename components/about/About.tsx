@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { aboutData } from "@/data/about";
 import SectionTitle from "@/components/ui/SectionTitle";
+import ScrollAnimation from "@/components/ui/ScrollAnimation"; // 👈 1. IMPORTANTE: Importamos la magia
 import {
   MapPin,
   Calendar,
@@ -44,13 +45,20 @@ export default function About() {
       id="about"
       className="relative min-h-screen pt-6! overflow-hidden flex items-center"
     >
-      <div className="max-w-[1700px] items-center  relative z-10">
-        <SectionTitle title={aboutData.sectionTitle} />
+      <div className="max-w-[1700px] items-center relative z-10">
+        {/* 2. Título animado hacia arriba */}
+        <ScrollAnimation direction="up">
+          <SectionTitle title={aboutData.sectionTitle} />
+        </ScrollAnimation>
 
-        {/***********Inicio del contenedor Grid */}
+        {/***********Inicio del contenedor Grid (Este NO se anima, solo contiene) */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.0fr_2.0fr] gap-12 lg:gap-10 xl:gap-18 xl:ml-20! items-center ">
-          {/* COLUMNA 1: FOTO */}
-          <div className="flex justify-center lg:justify-end relative lg:order-1">
+          {/* COLUMNA 1: FOTO (Entra moviéndose a la DERECHA) */}
+          {/* Cambié el <div> por <ScrollAnimation> conservando TODAS sus clases */}
+          <ScrollAnimation
+            direction="right"
+            className="flex justify-center lg:justify-end relative lg:order-1"
+          >
             <div className="relative w-[290px]! h-[400px]! md:w-[350px] md:h-[450px] group">
               <div className="absolute top-6 left-6 w-full h-full border-2 border-accent rounded-xl z-0 box-border shadow-[0_0_20px_rgba(249,115,22,0.9)] transition-all duration-500 ease-out group-hover:translate-x-3 group-hover:translate-y-3 group-hover:shadow-[0_0_40px_rgba(249,115,22,0.9)]"></div>
               <div className="relative w-full h-full z-10 bg-neutral-900 border border-white/10 shadow-2xl rounded-xl">
@@ -65,10 +73,11 @@ export default function About() {
                 />
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
 
-          {/* COLUMNA 2: TARJETA DE BIO */}
-          <div className="order-2">
+          {/* COLUMNA 2: TARJETA DE BIO (Entra moviéndose a la IZQUIERDA) */}
+          {/* Cambié el <div> por <ScrollAnimation> conservando clases y agregando delay */}
+          <ScrollAnimation direction="left" delay={0.2} className="order-2">
             <div className="mx-4! lg:mx-0! bg-[#1a1512]/70 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[650px] flex flex-col transition-all duration-500 ease-out hover:border-accent hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-[1.02] hover:-translate-y-1">
               <h3 className="relative text-3xl md:text-4xl font-extrabold text-white mt-6! pl-10!">
                 {aboutData.greeting.prefix}
@@ -96,8 +105,7 @@ export default function About() {
                 {aboutData.bio}
               </p>
 
-              {/* Grid de Datos - CAMBIOS AQUÍ 👇 */}
-              {/* 1. CAMBIO: xl:px-24! hace que la caja sea más angosta (más padding a los lados) */}
+              {/* Grid de Datos */}
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8! px-6! xl:px-24!">
                 {aboutData.stats.map((stat, index) => (
                   <div
@@ -108,11 +116,9 @@ export default function About() {
                       {getIcon(stat.icon)}
                     </div>
                     <div>
-                      {/* 2. CAMBIO: text-xs (12px) - Un poco más grande que antes */}
                       <span className="block text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">
                         {stat.label}
                       </span>
-                      {/* 3. CAMBIO: text-lg (18px) - Mucho más grande y legible */}
                       <span className="text-lg text-white font-bold">
                         {stat.text}
                       </span>
@@ -121,7 +127,7 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

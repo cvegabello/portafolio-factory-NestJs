@@ -3,7 +3,8 @@
 import SectionTitle from "@/components/ui/SectionTitle";
 import SectionBackground from "@/components/ui/SectionBackground";
 import Timeline from "@/components/ui/TimeLine";
-import Accordion from "@/components/ui/Accordion"; // <--- Importante
+import Accordion from "@/components/ui/Accordion";
+import ScrollAnimation from "@/components/ui/ScrollAnimation"; // 👈 1. Importamos la magia
 import { academicsData } from "@/data/academics";
 import {
   BookOpen,
@@ -48,24 +49,23 @@ export default function Academics() {
       <SectionBackground img={academicsData.backgroundImage} />
 
       <div className="w-full max-w-8xl mx-auto px-4 relative z-10 flex flex-col items-center">
-        <SectionTitle title={academicsData.sectionTitle} />
+        {/* Título entrando suave hacia arriba */}
+        <ScrollAnimation direction="up">
+          <SectionTitle title={academicsData.sectionTitle} />
+        </ScrollAnimation>
 
         {/* --- 1. GRID DE TARJETAS (STATS) --- */}
-        {/* CAMBIOS RESPONSIVE APLICADOS:
-            - grid-cols-2       -> Celular
-            - md:grid-cols-3    -> iPad / Tablet Vertical
-            - xl:grid-cols-6    -> Pantallas Grandes
-            
-            También ajusté el ancho del contenedor a 'w-full xl:w-fit!' para que en celular
-            ocupe toda la pantalla y quepan las 2 columnas, pero en PC se ajuste al centro.
-        */}
-        <div
+        {/* Cambié el <div> por <ScrollAnimation> conservando TODAS sus clases exactas */}
+        {/* direction="up" -> Salen de abajo hacia arriba */}
+        <ScrollAnimation
+          direction="up"
+          delay={0.2}
           className="
             grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 
             gap-x-4 gap-y-6 xl:gap-x-8! 
             mb-14! 
             w-full xl:w-fit! px-6! justify-center
-        "
+          "
         >
           {academicsData.stats.map((stat) => (
             <div key={stat.id} className="group relative w-full">
@@ -89,20 +89,30 @@ export default function Academics() {
               </div>
             </div>
           ))}
-        </div>
+        </ScrollAnimation>
 
         {/* --- 2. ZONA MAESTRA: TIMELINE + ACORDEÓN --- */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-start w-full max-w-7xl mx-auto pb-32">
           {/* === COLUMNA IZQUIERDA: TIMELINE === */}
-          <div className="w-full flex justify-center lg:justify-end">
+          {/* direction="right" -> Viene de la Izquierda hacia la derecha */}
+          <ScrollAnimation
+            direction="right"
+            delay={0.4}
+            className="w-full flex justify-center lg:justify-end"
+          >
             <Timeline items={academicsData.timeline} title="My Journey" />
-          </div>
+          </ScrollAnimation>
 
           {/* === COLUMNA DERECHA: ACORDEÓN (DIGITAL LOCKER) === */}
-          <div className="w-full flex justify-center lg:justify-start">
+          {/* direction="left" -> Viene de la Derecha hacia la izquierda */}
+          <ScrollAnimation
+            direction="left"
+            delay={0.4}
+            className="w-full flex justify-center lg:justify-start"
+          >
             {/* Aquí llamamos al componente limpio, sin títulos extra */}
             <Accordion items={academicsData.lockerItems} title="The Evidence" />
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

@@ -1,39 +1,61 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
 
 interface ScrollAnimationProps {
   children: React.ReactNode;
+  direction?: "up" | "down" | "left" | "right" | "none";
   className?: string;
-  direction?: "up" | "down" | "left" | "right"; // Agregamos soporte para direcciones
+  delay?: number;
 }
 
 export default function ScrollAnimation({
   children,
+  direction = "up",
   className = "",
-  direction = "up", // Por defecto va hacia arriba
+  delay = 0,
 }: ScrollAnimationProps) {
-  // Configuramos las variantes según la dirección
-  const getVariants = () => {
-    const distance = 80; // Qué tanto se mueve (en píxeles)
+  const ref = useRef(null);
+  // 👇 TRUCO: margin "-100px" obliga a que el elemento entre BASTANTE en pantalla antes de animarse
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-    const hidden = { opacity: 0, x: 0, y: 0 };
+  const getVariants = (): Variants => {
+    // 👇 CAMBIO: Aumenté la distancia a 80px para que el movimiento sea más notorio
+    const distance = 60;
 
-    // Calculamos de dónde viene
-    if (direction === "up") hidden.y = distance;
-    if (direction === "down") hidden.y = -distance;
-    if (direction === "left") hidden.x = distance; // Viene de la derecha
-    if (direction === "right") hidden.x = -distance; // Viene de la izquierda
+    if (direction === "none") {
+      return {
+        hidden: { opacity: 0, scale: 0.95 }, // Un pequeño zoom in para que se note más
+        visible: {
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.8, delay, ease: "easeOut" },
+        },
+      };
+    }
 
     return {
-      hidden,
+      hidden: {
+        opacity: 0,
+        // Lógica de dirección
+        y: direction === "up" ? distance : direction === "down" ? -distance : 0,
+        x:
+          direction === "left"
+            ? distance
+            : direction === "right"
+              ? -distance
+              : 0,
+      },
       visible: {
         opacity: 1,
-        x: 0,
         y: 0,
+        x: 0,
         transition: {
-          duration: 0.8,
-          ease: "easeOut", // Movimiento suave al final
+          // 👇 CAMBIO: 0.8s es más lento y "cinematográfico"
+          duration: 0.9,
+          delay: delay,
+          ease: "easeOut",
         },
       },
     };
@@ -41,9 +63,10 @@ export default function ScrollAnimation({
 
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }} // IMPORTANTE: Se activa un poco antes de llegar
+      viewport={{ once: false, margin: "-100px" }} // Sincronizado con el hook
       variants={getVariants()}
       className={className}
     >

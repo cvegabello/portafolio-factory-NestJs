@@ -17,28 +17,14 @@ export default function Home() {
       {/* 1. EL HERO VA SUELTO (Para que cargue de una) */}
       <Hero />
       {/* 2. El resto sí lleva animación al bajar */}
-      <ScrollAnimation>
-        <About />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Academics />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Athletics />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Projects />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <References />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Moments />
-      </ScrollAnimation>
+      <About />
+      <Academics />
+      <Athletics />
+      <Projects />
+      <References />
+      <Moments />
       {/* 3. El Contacto entra por la derecha */}
-      <ScrollAnimation direction="right">
-        <Contact />
-      </ScrollAnimation>
+      <Contact />
       {/* 4. Footer al final */}
       <Footer />
     </main>
