@@ -20,8 +20,12 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Portafolio Factory",
-  description: "Portafolio Factory - Sistema de diseño profesional",
+  title: "Santiago Vega | Student-Athlete Portfolio",
+  description:
+    "Official recruiting portfolio of Santiago Vega. Class of 2027 Midfielder & Scholar.",
+  icons: {
+    icon: "/favicon.ico", // Esto busca el archivo en la carpeta public
+  },
 };
 
 export default function RootLayout({

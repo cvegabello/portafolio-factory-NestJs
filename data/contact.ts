@@ -13,8 +13,8 @@ export const contactData = {
     {
       id: 1,
       icon: Mail, // Lucide (UI)
-      text: "santiagoveganeira@gmail.com",
-      href: "mailto:santiagoveganeira@gmail.com",
+      text: "santiveganeira@gmail.com",
+      href: "mailto:santiveganeira@gmail.com",
     },
     {
       id: 2,
