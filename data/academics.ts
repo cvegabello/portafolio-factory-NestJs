@@ -48,7 +48,7 @@ export interface AcademicsData {
 // 2. LA DATA MAESTRA
 export const academicsData: AcademicsData = {
   sectionTitle: "Academic Record",
-  backgroundImage: "/img/Academics.JPEG",
+  backgroundImage: "/img/academics.jpeg",
 
   stats: [
     {
