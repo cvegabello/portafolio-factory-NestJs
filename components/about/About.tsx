@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { aboutData } from "@/data/about";
 import SectionTitle from "@/components/ui/SectionTitle";
-import ScrollAnimation from "@/components/ui/ScrollAnimation"; // 👈 1. IMPORTANTE: Importamos la magia
+import ScrollAnimation from "@/components/ui/ScrollAnimation";
 import {
   MapPin,
   Calendar,
@@ -13,6 +13,8 @@ import {
   GraduationCap,
   Gamepad2,
   Home,
+  FileText, // 👈 NUEVO: Icono de archivo
+  Download, // 👈 NUEVO: Icono de descarga
 } from "lucide-react";
 
 const getIcon = (iconName: string) => {
@@ -51,13 +53,12 @@ export default function About() {
           <SectionTitle title={aboutData.sectionTitle} />
         </ScrollAnimation>
 
-        {/***********Inicio del contenedor Grid (Este NO se anima, solo contiene) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.0fr_2.0fr] gap-12 lg:gap-10 xl:gap-18 xl:ml-20! items-center ">
-          {/* COLUMNA 1: FOTO (Entra moviéndose a la DERECHA) */}
-          {/* Cambié el <div> por <ScrollAnimation> conservando TODAS sus clases */}
+        {/***********Inicio del contenedor Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.0fr_2.0fr] gap-12 lg:gap-10 xl:gap-18 xl:ml-28! items-center ">
+          {/* COLUMNA 1: FOTO */}
           <ScrollAnimation
             direction="right"
-            className="flex justify-center lg:justify-end relative lg:order-1"
+            className="flex flex-col items-center lg:items-end relative lg:order-1"
           >
             <div className="relative w-[290px]! h-[400px]! md:w-[350px] md:h-[450px] group">
               <div className="absolute top-6 left-6 w-full h-full border-2 border-accent rounded-xl z-0 box-border shadow-[0_0_20px_rgba(249,115,22,0.9)] transition-all duration-500 ease-out group-hover:translate-x-3 group-hover:translate-y-3 group-hover:shadow-[0_0_40px_rgba(249,115,22,0.9)]"></div>
@@ -73,12 +74,31 @@ export default function About() {
                 />
               </div>
             </div>
+
+            {/* 👇👇👇 AQUÍ INICIA EL BOTÓN NUEVO 👇👇👇 */}
+            <div className="mt-14! flex justify-center lg:justify-end px-4! lg:pl-20!">
+              <a
+                href="/docs/resume.pdf" // ⚠️ RECUERDE: El archivo debe estar en la carpeta 'public'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                    group flex items-center gap-3 px-4! py-4! 
+                    border-2 border-accent hover:bg-orange-600 text-white 
+                    font-bold text-lg rounded-2xl 
+                    transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)]
+                  "
+              >
+                <FileText className="w-5! h-5!" />
+                <span>Download Resume</span>
+                <Download className="w-5! h-5! opacity-70 group-hover:translate-y-1 transition-transform" />
+              </a>
+            </div>
+            {/* 👆👆👆 AQUÍ TERMINA EL BOTÓN NUEVO 👆👆👆 */}
           </ScrollAnimation>
 
-          {/* COLUMNA 2: TARJETA DE BIO (Entra moviéndose a la IZQUIERDA) */}
-          {/* Cambié el <div> por <ScrollAnimation> conservando clases y agregando delay */}
+          {/* COLUMNA 2: TARJETA DE BIO + BOTÓN */}
           <ScrollAnimation direction="left" delay={0.2} className="order-2">
-            <div className="mx-4! lg:mx-0! bg-[#1a1512]/70 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[650px] flex flex-col transition-all duration-500 ease-out hover:border-accent hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-[1.02] hover:-translate-y-1">
+            <div className="mx-4! mb-8! pb-4! lg:pb-0! lg:mb-0! lg:mx-0! bg-[#1a1512]/70 border border-white/10 rounded-3xl shadow-2xl relative overflow-hidden backdrop-blur-sm min-h-[580px] flex flex-col transition-all duration-500 ease-out hover:border-accent hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-[1.02] hover:-translate-y-1">
               <h3 className="relative text-3xl md:text-4xl font-extrabold text-white mt-6! pl-10!">
                 {aboutData.greeting.prefix}
                 <span className="text-accent drop-shadow-[0_0_15px_rgba(249,115,22,0.7)] ml-4!">
@@ -106,7 +126,7 @@ export default function About() {
               </p>
 
               {/* Grid de Datos */}
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8! px-6! xl:px-24!">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-8! px-6! xl:mx-2!">
                 {aboutData.stats.map((stat, index) => (
                   <div
                     key={index}
@@ -119,7 +139,7 @@ export default function About() {
                       <span className="block text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">
                         {stat.label}
                       </span>
-                      <span className="text-lg text-white font-bold">
+                      <span className="text-[14px] text-white font-bold">
                         {stat.text}
                       </span>
                     </div>
