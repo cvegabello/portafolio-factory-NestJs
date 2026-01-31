@@ -1,15 +1,24 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Plus, X, FileText, PenTool, Trophy, Video, Download, PlayCircle, FolderOpen, ExternalLink
-} from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Plus,
+  X,
+  FileText,
+  PenTool,
+  Trophy,
+  Video,
+  Download,
+  PlayCircle,
+  FolderOpen,
+  ExternalLink,
+} from "lucide-react";
 
 interface LockerFile {
   name: string;
   url: string;
-  type: 'download' | 'video';
+  type: "download" | "video";
 }
 
 interface LockerItem {
@@ -26,16 +35,21 @@ interface AccordionProps {
 
 const getIcon = (iconName: string, size: number = 28) => {
   switch (iconName) {
-    case 'FileText': return <FileText size={size} />;
-    case 'PenTool': return <PenTool size={size} />;
-    case 'Trophy': return <Trophy size={size} />;
-    case 'Video': return <Video size={size} />;
-    default: return <FolderOpen size={size} />;
+    case "FileText":
+      return <FileText size={size} />;
+    case "PenTool":
+      return <PenTool size={size} />;
+    case "Trophy":
+      return <Trophy size={size} />;
+    case "Video":
+      return <Video size={size} />;
+    default:
+      return <FolderOpen size={size} />;
   }
 };
 
 export default function Accordion({ items, title, subtitle }: AccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -44,9 +58,9 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    
     // --- CÁPSULA CONTENEDORA ---
-    <div className="
+    <div
+      className="
       relative w-[90%]! md:w-full max-w-2xl h-[520px] rounded-3xl 
       bg-gray/10 backdrop-blur-md
       overflow-y-auto [&::-webkit-scrollbar]:w-[9px] [&::-webkit-scrollbar-thumb]:rounded-full scrollbar-thumb-accent scrollbar-track-[#1a1a1a]/80
@@ -54,22 +68,24 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
       border border-white/40
       /* Mantenemos el padding generoso que le gustó */
       p-2! md:px-12! md:pt-6!
-    ">
-      
+    "
+    >
       {/* HEADER DECORATIVO (AHORA SIEMPRE CENTRADO) */}
       {(title || subtitle) && (
         <div className="mb-8! flex flex-col items-center justify-center">
-           {title && (
-             <h3 className="text-2xl font-bold text-white tracking-wider drop-shadow-md">
-               {title}
-             </h3>
-           )}
-           
-           {/* Decoración igual a la del Timeline */}
-           <div className="h-1 w-12 bg-accent rounded-full mt-2 shadow-[0_0_10px_rgba(249,115,22,0.5)]"></div>
+          {title && (
+            <h3 className="text-2xl font-bold text-white tracking-wider drop-shadow-md">
+              {title}
+            </h3>
+          )}
 
-           {/* Subtítulo opcional */}
-           {subtitle && <p className="text-sm text-gray-400 font-mono mt-3">{subtitle}</p>}
+          {/* Decoración igual a la del Timeline */}
+          <div className="h-1 w-12 bg-accent rounded-full mt-2 shadow-[0_0_10px_rgba(249,115,22,0.5)]"></div>
+
+          {/* Subtítulo opcional */}
+          {subtitle && (
+            <p className="text-sm text-gray-400 font-mono mt-3">{subtitle}</p>
+          )}
         </div>
       )}
 
@@ -79,13 +95,14 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
           const isOpen = openIndex === index;
 
           return (
-            <div 
+            <div
               key={index}
               className={`
                 relative overflow-hidden rounded-2xl border-2 transition-all duration-300
-                ${isOpen 
-                  ? 'bg-[#0a0a0a] border-accent shadow-[0_0_20px_rgba(249,115,22,0.2)]' 
-                  : 'bg-[#1a1a1a] border-accent/30 hover:border-accent/70'
+                ${
+                  isOpen
+                    ? "bg-[#0a0a0a] border-accent shadow-[0_0_20px_rgba(249,115,22,0.2)]"
+                    : "bg-[#1a1a1a] border-accent/30 hover:border-accent/70"
                 }
               `}
             >
@@ -99,9 +116,12 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
                     {getIcon(item.iconName, 32)}
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white">{item.title}</h4>
+                    <h4 className="text-xl font-bold text-white">
+                      {item.title}
+                    </h4>
                     <p className="text-sm text-gray-400 font-medium mt-1">
-                      {item.files.length} {item.files.length === 1 ? 'File' : 'Files'} inside
+                      {item.files.length}{" "}
+                      {item.files.length === 1 ? "File" : "Files"} inside
                     </p>
                   </div>
                 </div>
@@ -122,14 +142,17 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
                     // y le damos un borde superior sutil para separarlo visualmente.
                     className="bg-[#111] border-t border-white/5"
                   >
-                    <div className="px-8! pb-6! pt-4!"> {/* pt-6 para darle aire arriba de los links */}
-                      
+                    <div className="px-8! pb-6! pt-4!">
+                      {" "}
+                      {/* pt-6 para darle aire arriba de los links */}
                       {/* Quitamos la línea separadora vieja porque ya pusimos border-t arriba */}
-                      
                       <div className="flex flex-col gap-3">
                         {item.files.map((file, i) => (
-                          <a 
-                            key={i} href={file.url} target="_blank" rel="noopener noreferrer"
+                          <a
+                            key={i}
+                            href={file.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="
                               flex items-center justify-between p-4 rounded-xl bg-[#1a1a1a] border border-white/5
                               hover:bg-accent/10 px-3! hover:border-accent/50 transition-all duration-200 group/file
@@ -138,13 +161,20 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
                           >
                             <div className="flex items-center gap-4">
                               <div className="text-gray-500 group-hover/file:text-accent transition-colors">
-                                {file.type === 'download' ? <Download size={20} /> : <PlayCircle size={20} />}
+                                {file.type === "download" ? (
+                                  <Download size={20} />
+                                ) : (
+                                  <PlayCircle size={20} />
+                                )}
                               </div>
                               <span className="text-base text-gray-300 group-hover/file:text-white font-medium transition-colors">
                                 {file.name}
                               </span>
                             </div>
-                            <ExternalLink size={16} className="text-gray-600 group-hover/file:text-accent opacity-0 group-hover/file:opacity-100 transition-all transform group-hover/file:translate-x-1" />
+                            <ExternalLink
+                              size={16}
+                              className="text-gray-600 group-hover/file:text-accent opacity-0 group-hover/file:opacity-100 transition-all transform group-hover/file:translate-x-1"
+                            />
                           </a>
                         ))}
                       </div>
