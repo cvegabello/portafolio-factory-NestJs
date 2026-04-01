@@ -60,15 +60,15 @@ export const academicsData: AcademicsData = {
     },
     {
       id: 2,
-      value: "1230 / 1500",
-      label: "PSAT / SAT Score",
+      value: "1390",
+      label: "SAT Score",
       iconName: "PenTool",
       color: "orange",
     },
     {
       id: 3,
       value: "2027",
-      label: "Graduation Year",
+      label: "Advanced Regents Diploma",
       iconName: "GraduationCap",
       color: "blue",
     },
@@ -148,23 +148,43 @@ export const academicsData: AcademicsData = {
   lockerSubtitle: "(Click to expand)",
   lockerItems: [
     {
-      title: "Official Transcripts",
+      title: "Official Transcripts/Report Cards",
       iconName: "FileText",
       files: [
         {
-          name: "Academic Records (Full)",
-          url: "/assets/docs/transcripts.pdf",
+          name: "Transcript June 2025",
+          url: "/docs/santiago-transcript-june-2025.pdf",
+          type: "download",
+        },
+        {
+          name: "Report Card 10th Grade",
+          url: "/docs/santiago-reportcard_10th.pdf",
+          type: "download",
+        },
+        {
+          name: "Report Card 11th Grade Qtr 2",
+          url: "/docs/santiago-reportcard-11-qtr2.pdf",
+          type: "download",
+        },
+        {
+          name: "Progress Report 11th Grade Qtr 2",
+          url: "/docs/santiago-progress-report-march-2026.pdf",
           type: "download",
         },
       ],
     },
     {
-      title: "Standardized Tests",
+      title: "Tests & Assessments",
       iconName: "PenTool",
       files: [
         {
-          name: "SAT Official Report",
-          url: "/assets/docs/sat-score.pdf",
+          name: "SAT Official Report March 2026",
+          url: "/docs/sat-score-march-2026.pdf",
+          type: "download",
+        },
+        {
+          name: "Assessments January 2026",
+          url: "/docs/santiago-assessments-jan-2026.pdf",
           type: "download",
         },
       ],
