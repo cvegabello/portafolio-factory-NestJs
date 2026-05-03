@@ -162,12 +162,12 @@ export const academicsData: AcademicsData = {
           type: "download",
         },
         {
-          name: "Report Card 11th Grade Qtr 2",
-          url: "/docs/santiago-reportcard-11-qtr2.pdf",
+          name: "Report Card 11th Grade Qtr 3",
+          url: "/docs/santiago-reportcard-11-qtr3.pdf",
           type: "download",
         },
         {
-          name: "Progress Report 11th Grade Qtr 2",
+          name: "Progress Report 11th Grade",
           url: "/docs/santiago-progress-report-march-2026.pdf",
           type: "download",
         },
@@ -195,23 +195,74 @@ export const academicsData: AcademicsData = {
       files: [
         {
           name: "Official Student Resume",
-          url: "/docs/ResumeSantiagoVega.pdf",
+          url: "/docs/resume.pdf",
           type: "download",
         },
         {
-          name: "Honor Roll Certificate",
-          url: "/docs/honor-roll.pdf",
+          name: "Junior Scholarship",
+          url: "/docs/JuniorScholarshipSanti.pdf",
+          type: "download",
+        },
+        {
+          name: "Colonial Council Sportsmanship Summit",
+          url: "/docs/ColonialCouncilSportsmanshipSanti.pdf",
           type: "download",
         },
       ],
     },
     {
-      title: "Leadership & Volunteering",
-      iconName: "Video",
+      title: "Images Awards & Honors",
+      iconName: "Pictures",
       files: [
-        { name: "Community Service Project", url: "#", type: "video" },
-        { name: "School Speech", url: "#", type: "video" },
+        {
+          name: "Science Honor Society Inductees",
+          url: "/img/ScienceHonorSocInd.jpeg",
+          type: "download",
+        },
+        {
+          name: "Science Honor Society Volunteering",
+          url: "/img/ScienceHSVol.png",
+          type: "download",
+        },
+        {
+          name: "English Honor Society Inductees",
+          url: "/img/EHSInductees.png",
+          type: "download",
+        },
+        {
+          name: "English Honor Society Helps",
+          url: "/img/EHSHelp.png",
+          type: "download",
+        },
+        {
+          name: "Spanish Honor Society Inductees",
+          url: "/img/spanishHonorSInduc.png",
+          type: "download",
+        },
+        {
+          name: "Spanish Honor Society Inductees 2",
+          url: "/img/spanishHonorCeremony.jpeg",
+          type: "download",
+        },
+        {
+          name: "Patriot Pen Essay Award",
+          url: "/img/PatriotPenEssayAwardSanti.jpeg",
+          type: "download",
+        },
+        {
+          name: "Science Olympiad Team",
+          url: "/img/ScienceOlimp.png",
+          type: "download",
+        },
       ],
     },
+    // {
+    //   title: "Leadership & Volunteering",
+    //   iconName: "Video",
+    //   files: [
+    //     { name: "Community Service Project", url: "#", type: "video" },
+    //     { name: "School Speech", url: "#", type: "video" },
+    //   ],
+    // },
   ],
 };
