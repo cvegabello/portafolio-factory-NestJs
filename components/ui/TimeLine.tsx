@@ -14,6 +14,7 @@ interface TimelineItem {
   details?: string;
   school: string;
   iconName: string;
+  image?: string;
 }
 
 interface TimelineProps {
@@ -243,6 +244,17 @@ const Timeline: React.FC<TimelineProps> = ({ items, title }) => {
                    <h4 className="text-gray-400 font-medium mb-6 flex items-center gap-2"><GraduationCap size={18}/> {selectedItem.school}</h4>
                    <div className="w-full h-px bg-white/10 mb-6"></div>
                    <p className="text-gray-300 leading-relaxed text-base">{selectedItem.details || selectedItem.description}</p>
+                   {selectedItem.image && (
+                     <div className="w-full flex justify-center mt-6">
+                       <div className="relative w-full max-w-[280px] rounded-xl overflow-hidden border border-white/15 shadow-[0_0_20px_rgba(249,115,22,0.15)] bg-black/40">
+                         <img 
+                           src={selectedItem.image} 
+                           alt={selectedItem.title} 
+                           className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                         />
+                       </div>
+                     </div>
+                   )}
                  </div>
                </motion.div>
              </div>

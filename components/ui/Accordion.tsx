@@ -48,8 +48,21 @@ const getIcon = (iconName: string, size: number = 28) => {
   }
 };
 
+const getEmbedUrl = (url: string) => {
+  if (url.includes("youtube.com/embed/")) {
+    return url;
+  }
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  if (match && match[2].length === 11) {
+    return `https://www.youtube.com/embed/${match[2]}`;
+  }
+  return url;
+};
+
 export default function Accordion({ items, title, subtitle }: AccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -147,36 +160,55 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
                       {/* pt-6 para darle aire arriba de los links */}
                       {/* Quitamos la línea separadora vieja porque ya pusimos border-t arriba */}
                       <div className="flex flex-col gap-3">
-                        {item.files.map((file, i) => (
-                          <a
-                            key={i}
-                            href={file.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                              flex items-center justify-between p-4 rounded-xl bg-[#1a1a1a] border border-white/5
-                              hover:bg-accent/10 px-3! hover:border-accent/50 transition-all duration-200 group/file
-                              cursor-pointer
-                            "
-                          >
-                            <div className="flex items-center gap-4">
-                              <div className="text-gray-500 group-hover/file:text-accent transition-colors">
-                                {file.type === "download" ? (
-                                  <Download size={20} />
-                                ) : (
-                                  <PlayCircle size={20} />
-                                )}
+                        {item.files.map((file, i) => {
+                          const isVideo = file.type === "video";
+                          
+                          const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                            if (isVideo) {
+                              e.preventDefault();
+                              setActiveVideoUrl(file.url);
+                            }
+                          };
+
+                          return (
+                            <a
+                              key={i}
+                              href={isVideo ? undefined : file.url}
+                              onClick={handleClick}
+                              target={isVideo ? undefined : "_blank"}
+                              rel={isVideo ? undefined : "noopener noreferrer"}
+                              className="
+                                flex items-center justify-between p-4 rounded-xl bg-[#1a1a1a] border border-white/5
+                                hover:bg-accent/10 px-3! hover:border-accent/50 transition-all duration-200 group/file
+                                cursor-pointer
+                              "
+                            >
+                              <div className="flex items-center gap-4">
+                                <div className="text-gray-500 group-hover/file:text-accent transition-colors">
+                                  {file.type === "download" ? (
+                                    <Download size={20} />
+                                  ) : (
+                                    <PlayCircle size={20} />
+                                  )}
+                                </div>
+                                <span className="text-base text-gray-300 group-hover/file:text-white font-medium transition-colors">
+                                  {file.name}
+                                </span>
                               </div>
-                              <span className="text-base text-gray-300 group-hover/file:text-white font-medium transition-colors">
-                                {file.name}
-                              </span>
-                            </div>
-                            <ExternalLink
-                              size={16}
-                              className="text-gray-600 group-hover/file:text-accent opacity-0 group-hover/file:opacity-100 transition-all transform group-hover/file:translate-x-1"
-                            />
-                          </a>
-                        ))}
+                              {isVideo ? (
+                                <PlayCircle
+                                  size={16}
+                                  className="text-gray-600 group-hover/file:text-accent opacity-0 group-hover/file:opacity-100 transition-all transform group-hover/file:scale-110"
+                                />
+                              ) : (
+                                <ExternalLink
+                                  size={16}
+                                  className="text-gray-600 group-hover/file:text-accent opacity-0 group-hover/file:opacity-100 transition-all transform group-hover/file:translate-x-1"
+                                />
+                              )}
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
                   </motion.div>
@@ -186,6 +218,52 @@ export default function Accordion({ items, title, subtitle }: AccordionProps) {
           );
         })}
       </div>
+
+      {/* MODAL DE VIDEO EN PORTAL / LIGHTBOX */}
+      <AnimatePresence>
+        {activeVideoUrl && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4"
+            onClick={() => setActiveVideoUrl(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-4xl bg-black rounded-3xl overflow-hidden p-[2px] bg-gradient-to-r from-blue-600 to-accent shadow-[0_0_50px_rgba(249,115,22,0.4)]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Contenedor interno */}
+              <div className="bg-[#050505] rounded-[22px] overflow-hidden">
+                {/* Header del Modal */}
+                <div className="flex justify-end p-4 border-b border-white/10">
+                  <button
+                    onClick={() => setActiveVideoUrl(null)}
+                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors cursor-pointer"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+                
+                {/* Reproductor de Video */}
+                <div className="relative w-full aspect-video bg-black">
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={`${getEmbedUrl(activeVideoUrl)}?autoplay=1`}
+                    title="Academic Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

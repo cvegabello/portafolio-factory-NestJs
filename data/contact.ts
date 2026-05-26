@@ -1,7 +1,6 @@
 // src/data/contact.ts
-import { Mail, MapPin, Send } from "lucide-react";
-// Importamos las marcas desde FontAwesome (fa) o SimpleIcons (si) usando react-icons
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { Mail, MapPin } from "lucide-react";
+import { FaGithub, FaYoutube, FaFutbol } from "react-icons/fa";
 
 export const contactData = {
   sectionTitle: "Get in Touch",
@@ -12,13 +11,13 @@ export const contactData = {
   contactInfo: [
     {
       id: 1,
-      icon: Mail, // Lucide (UI)
+      icon: Mail,
       text: "santiveganeira@gmail.com",
       href: "mailto:santiveganeira@gmail.com",
     },
     {
       id: 2,
-      icon: MapPin, // Lucide (UI)
+      icon: MapPin,
       text: "Schenectady, NY, USA",
       href: null,
     },
@@ -27,21 +26,21 @@ export const contactData = {
   socials: [
     {
       id: "github",
-      icon: FaGithub, // React Icons (Marca)
-      url: "https://github.com/santiagovega",
+      icon: FaGithub,
+      url: "https://github.com", // Puedes enlazar aquí el GitHub de Santiago
       label: "GitHub",
     },
     {
-      id: "linkedin",
-      icon: FaLinkedin, // React Icons (Marca)
-      url: "https://linkedin.com/in/santiagovega",
-      label: "LinkedIn",
+      id: "youtube",
+      icon: FaYoutube,
+      url: "https://www.youtube.com/watch?v=1AWeV39cuzg", // Enlace directo a su video principal de Highlights
+      label: "YouTube",
     },
     {
-      id: "instagram",
-      icon: FaInstagram, // React Icons (Marca)
-      url: "https://instagram.com/santiagovega",
-      label: "Instagram",
+      id: "ncsa",
+      icon: FaFutbol,
+      url: "https://recruit-match.ncsasports.org/clientrms/athlete_profiles/10702612", // Su perfil real verificado de NCSA
+      label: "NCSA Recruiting Profile",
     },
   ],
 };

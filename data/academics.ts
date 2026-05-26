@@ -28,6 +28,8 @@ export interface TimelineItem {
   title: string;
   school: string;
   description: string;
+  details?: string;
+  image?: string;
   iconName: string;
 }
 
@@ -100,47 +102,96 @@ export const academicsData: AcademicsData = {
   timeline: [
     {
       id: 1,
-      year: "2025 - Present",
-      title: "Senior Year (12th)",
-      school: "Shaker High School",
+      year: "2022 - 2023",
+      title: "Literary Award & Early STEM",
+      school: "Schalmont High School",
       description:
-        "Liderando el equipo Varsity y finalizando aplicaciones universitarias.",
-      iconName: "Trophy",
+        "Winner of the prestigious Patriot's Pen Essay Award and member of the Science Olympiad team.",
+      details:
+        "Winner of the first-place district award in the national writing competition 'Patriot's Pen Essay Award'. Additionally, initiated competitive participation in the Science Olympiad team, demonstrating a unique balance between humanities and scientific rigor from an early age.",
+      image: "/img/PatriotPenEssayAwardSanti.jpeg",
+      iconName: "trophy",
     },
     {
       id: 2,
-      year: "2024",
-      title: "Junior Year (11th)",
-      school: "Shaker High School",
-      description: "Año crítico: AP Computer Science A y enfoque en STEM.",
-      iconName: "Code",
+      year: "2023 - 2024",
+      title: "Freshman Year: High Honor Roll",
+      school: "Schalmont High School",
+      description:
+        "Entered high school excelling academically, achieving High Honor Roll and joining the Spanish Club.",
+      details:
+        "Began high school education at Schalmont High School, earning 'High Honor Roll' distinction every single quarter. In parallel, actively participated in the Spanish Club to promote bilingualism and cultural heritage within the school community.",
+      image: "/img/spanishHonorSInduc.png",
+      iconName: "book",
     },
     {
       id: 3,
-      year: "2023",
-      title: "Sophomore Year (10th)",
-      school: "Shaker High School",
+      year: "2024 - 2025",
+      title: "Sophomore: Engineering & Varsity Soccer",
+      school: "Schalmont High School",
       description:
-        "Inicio de profundización en ciencias y matemáticas avanzadas.",
-      iconName: "BookOpen",
+        "Started college-level STEM coursework and debuted on the Varsity Soccer team as regional runner-up.",
+      details:
+        "Began rigorous engineering coursework with RIT Principles of Engineering (college credits via Rochester Institute of Technology) and Siena College Multimedia Python. Simultaneously debuted on Schalmont's Varsity Soccer team (#18), scoring two goals in the Sabres win and reaching the sectional regional finals (Runner-up).",
+      image: "/img/gallery-1.jpg",
+      iconName: "cpu",
     },
     {
       id: 4,
-      year: "2022",
-      title: "Sophomore Year (10th)",
-      school: "Shaker High School",
+      year: "2025 - 2026",
+      title: "Junior Year: Honor Societies & SAT",
+      school: "Schalmont High School",
       description:
-        "Inicio de profundización en ciencias y matemáticas avanzadas.",
-      iconName: "BookOpen",
+        "Inducted into Science, English, and Spanish Honor Societies. Scored 1390 on the SAT and maintained a 102.98 GPA.",
+      details:
+        "A year of exceptional academic milestones: simultaneous induction into the Science Honor Society, English Honor Society, and Spanish Honor Society. Achieved an outstanding SAT score of 1390 (730 in math, top national percentile) and a record weighted GPA of 102.98, while completing university-level courses through SUNY and HVCC.",
+      image: "/img/ScienceHonorSocInd.jpeg",
+      iconName: "code",
     },
     {
       id: 5,
-      year: "2021",
-      title: "Sophomore Year (10th)",
-      school: "Shaker High School",
+      year: "March 2026",
+      title: "Rensselaer Medalist & Scholarship",
+      school: "Schalmont High School",
       description:
-        "Inicio de profundización en ciencias y matemáticas avanzadas.",
-      iconName: "BookOpen",
+        "Awarded the prestigious Rensselaer Medal, including a $40k/year scholarship to RPI.",
+      details:
+        "Nominated and confirmed as the Rensselaer Medalist by the Rensselaer Polytechnic Institute (RPI). This historic award recognizes the top mathematics and science student in the high school class. It awards a guaranteed $40,000 annual scholarship ($160,000 total over four years) upon application and enrollment at RPI.",
+      iconName: "trophy",
+    },
+    {
+      id: 6,
+      year: "2025 - 2026",
+      title: "Leadership & Community Impact",
+      school: "Schalmont High School",
+      description:
+        "Selected for the Colonial Council Sportsmanship Summit and volunteered in child literacy programs.",
+      details:
+        "Selected as one of the exclusive six school representatives for the prestigious Colonial Council Sportsmanship Summit in 2026. Additionally, served the community by volunteering in the English Honor Society's program to assist kindergarten students in developing early reading and writing skills.",
+      image: "/img/EHSHelp.png",
+      iconName: "star",
+    },
+    {
+      id: 7,
+      year: "2026 - 2027",
+      title: "Senior Year: College Credits & Leadership",
+      school: "Schalmont High School",
+      description:
+        "Projected to accumulate 36 college credits and lead as a Senior on the Varsity Soccer team.",
+      details:
+        "Currently taking multiple advanced AP courses (Physics, US History) and college-credit courses, accumulating 36 transferable college credits before graduation. Leading the varsity soccer team and finalizing the university recruiting process for a Computer Science / Finance degree.",
+      iconName: "work",
+    },
+    {
+      id: 8,
+      year: "2027",
+      title: "Graduation & College Transition",
+      school: "Schalmont High School / College",
+      description:
+        "Graduation with Advanced Regents Diploma and transition to university as a Computer Science Student-Athlete.",
+      details:
+        "Scheduled to graduate in June 2027 with the prestigious 'Advanced Regents Diploma'. Transitioning to a top-tier university to pursue a degree in Computer Science or Finance, aiming to compete in collegiate soccer as a student-athlete while maintaining rigorous academic standards.",
+      iconName: "trophy",
     },
   ],
 
@@ -199,6 +250,11 @@ export const academicsData: AcademicsData = {
           type: "download",
         },
         {
+          name: "RPIMedalProgramSanti",
+          url: "/docs/RPIMedalProgramSanti.pdf",
+          type: "download",
+        },
+        {
           name: "Junior Scholarship",
           url: "/docs/JuniorScholarshipSanti.pdf",
           type: "download",
@@ -210,6 +266,7 @@ export const academicsData: AcademicsData = {
         },
       ],
     },
+    /* 
     {
       title: "Images Awards & Honors",
       iconName: "Pictures",
@@ -256,13 +313,27 @@ export const academicsData: AcademicsData = {
         },
       ],
     },
-    // {
-    //   title: "Leadership & Volunteering",
-    //   iconName: "Video",
-    //   files: [
-    //     { name: "Community Service Project", url: "#", type: "video" },
-    //     { name: "School Speech", url: "#", type: "video" },
-    //   ],
-    // },
+    */
+    {
+      title: "Academic Ceremonies & Honors",
+      iconName: "Video",
+      files: [
+        {
+          name: "Official Rensselaer Medalist Presentation",
+          url: "https://www.youtube.com/embed/jpReQAvbz_k",
+          type: "video",
+        },
+        {
+          name: "Memorial Award for Character & Outstanding Friendship",
+          url: "https://www.youtube.com/embed/cZ1o68NPIIU",
+          type: "video",
+        },
+        {
+          name: "Academic Honors & Photos Recap",
+          url: "https://www.youtube.com/embed/5-NTUAA2UaY",
+          type: "video",
+        },
+      ],
+    },
   ],
 };

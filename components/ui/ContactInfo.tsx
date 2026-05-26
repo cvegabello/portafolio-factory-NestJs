@@ -53,9 +53,14 @@ export default function ContactInfo() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className="p-5! rounded-full border border-gray-700 hover:border-accent text-white hover:text-accent hover:scale-110 transition-all duration-300 group"
+            className="relative p-5! rounded-full border border-gray-700 hover:border-accent text-white hover:text-accent hover:scale-110 transition-all duration-300 group cursor-pointer"
           >
             <social.icon className="w-6! h-6!" />
+            
+            {/* Tooltip */}
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-1.5 bg-black/95 backdrop-blur-sm text-xs font-semibold text-white rounded-lg border border-white/15 opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 pointer-events-none transition-all duration-200 whitespace-nowrap shadow-[0_0_15px_rgba(249,115,22,0.3)] z-30 after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-black/95">
+              {social.label}
+            </span>
           </a>
         ))}
       </div>

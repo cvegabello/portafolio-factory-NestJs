@@ -66,9 +66,9 @@ export const athleticsData = {
       },
       {
         id: 4,
-        title: "Strength Training",
-        description: "Gym & Core work",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        title: "Action Shots & Pictures 📸",
+        description: "Highlights & Photography",
+        videoUrl: "https://www.youtube.com/embed/6KBU3_pMq6E",
       },
       {
         id: 5,
