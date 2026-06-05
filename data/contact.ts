@@ -27,7 +27,7 @@ export const contactData = {
     {
       id: "github",
       icon: FaGithub,
-      url: "https://github.com", // Puedes enlazar aquí el GitHub de Santiago
+      url: "https://github.com/SantiVega321?tab=repositories", // Puedes enlazar aquí el GitHub de Santiago
       label: "GitHub",
     },
     {
