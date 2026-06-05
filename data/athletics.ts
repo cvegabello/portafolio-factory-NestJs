@@ -72,9 +72,10 @@ export const athleticsData = {
       },
       {
         id: 5,
-        title: "Tactical Analysis",
-        description: "Positional play review",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        title: "Midfield Playmaking & Key Actions",
+        description:
+          "Rotterdam Utd #10 & Schalmont HS #18 | Assists, creative passes & shots",
+        videoUrl: "https://www.youtube.com/embed/gm12Rtvciwc",
       },
     ],
   },
