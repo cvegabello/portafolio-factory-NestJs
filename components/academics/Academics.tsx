@@ -139,17 +139,18 @@ export default function Academics() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md overflow-y-auto"
             onClick={() => setShowCreditsModal(false)}
           >
-            <motion.div
-              initial={{ scale: 0.95, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.95, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 350 }}
-              className="relative w-full max-w-4xl bg-[#050505] rounded-3xl overflow-hidden p-8! md:p-12! border border-accent/40 shadow-[0_0_50px_rgba(249,115,22,0.35)] my-8"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="flex min-h-full items-center justify-center p-4 py-10">
+              <motion.div
+                initial={{ scale: 0.95, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.95, y: 20 }}
+                transition={{ type: "spring", damping: 25, stiffness: 350 }}
+                className="relative w-full max-w-4xl bg-[#050505] rounded-3xl overflow-hidden p-6! sm:p-8! md:p-12! border border-accent/40 shadow-[0_0_50px_rgba(249,115,22,0.35)]"
+                onClick={(e) => e.stopPropagation()}
+              >
               {/* Botón Cerrar */}
               <button
                 onClick={() => setShowCreditsModal(false)}
@@ -319,6 +320,7 @@ export default function Academics() {
                 </div>
               </div>
             </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
