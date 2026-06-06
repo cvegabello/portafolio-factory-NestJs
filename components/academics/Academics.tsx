@@ -174,7 +174,7 @@ export default function Academics() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10! mb-8!">
                 
                 {/* AP CREDITS CARD */}
-                <div className="bg-[#111] border border-orange-500/20 rounded-2xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between h-full min-h-[380px]">
+                <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden flex flex-col justify-between h-full min-h-[380px]">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none"></div>
                   <div>
                     <div className="flex items-center gap-3 mb-6">
@@ -205,7 +205,7 @@ export default function Academics() {
                 </div>
 
                 {/* DUAL ENROLLMENT CARD */}
-                <div className="bg-[#111] border border-blue-500/20 rounded-2xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between h-full min-h-[380px]">
+                <div className="bg-[#111] border border-blue-500/20 rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden flex flex-col justify-between h-full min-h-[380px]">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-bl-full pointer-events-none"></div>
                   <div>
                     <div className="flex items-center gap-3 mb-6">
@@ -261,7 +261,7 @@ export default function Academics() {
               </div>
 
               {/* SENIOR YEAR IN PROGRESS CARD */}
-              <div className="bg-linear-to-r from-blue-950/40 to-orange-950/40 border border-white/10 rounded-2xl p-6 md:p-8 relative overflow-hidden mt-8! md:mt-10!">
+              <div className="bg-linear-to-r from-blue-950/40 to-orange-950/40 border border-white/10 rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden mt-8! md:mt-10!">
                 <div className="absolute top-4 right-6">
                   <span className="px-4 py-1.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/30 text-[10px] md:text-xs font-bold uppercase tracking-widest animate-pulse">
                     Senior Year (In Progress)
