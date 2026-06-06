@@ -171,7 +171,7 @@ export default function Academics() {
               </div>
 
               {/* Grid Principal */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10! mb-8!">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6! mb-6!">
                 
                 {/* AP CREDITS CARD */}
                 <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden flex flex-col justify-between h-full min-h-[380px]">
@@ -183,7 +183,7 @@ export default function Academics() {
                       </div>
                       <h4 className="text-lg md:text-xl font-bold text-white">Advanced Placement</h4>
                     </div>
-                    <ul className="space-y-4 mb-6 text-sm md:text-base text-gray-300">
+                    <ul className="space-y-2 mb-6 text-sm md:text-base text-gray-300 px-2 md:px-4">
                       <li className="flex justify-between border-b border-white/5 pb-3">
                         <span>AP United States History</span>
                         <span className="font-bold text-accent">6 credits</span>
@@ -198,7 +198,7 @@ export default function Academics() {
                       </li>
                     </ul>
                   </div>
-                  <div className="pt-4 flex justify-between items-center text-sm md:text-base font-bold text-white border-t border-white/10 mt-auto">
+                  <div className="pt-4 px-2 md:px-4 flex justify-between items-center text-sm md:text-base font-bold text-white border-t border-white/10 mt-auto">
                     <span>Total AP Credits</span>
                     <span className="text-accent text-xl">16 Credits</span>
                   </div>
@@ -214,7 +214,7 @@ export default function Academics() {
                       </div>
                       <h4 className="text-lg md:text-xl font-bold text-white">Dual Enrollment</h4>
                     </div>
-                    <ul className="space-y-4 mb-6 text-xs md:text-sm text-gray-300">
+                    <ul className="space-y-2 mb-6 text-xs md:text-sm text-gray-300 px-2 md:px-4">
                       <li className="flex justify-between border-b border-white/5 pb-3">
                         <div>
                           <span className="font-bold block text-white text-xs md:text-sm">Siena College</span>
@@ -252,7 +252,7 @@ export default function Academics() {
                       </li>
                     </ul>
                   </div>
-                  <div className="pt-4 flex justify-between items-center text-sm md:text-base font-bold text-white border-t border-white/10 mt-auto">
+                  <div className="pt-4 px-2 md:px-4 flex justify-between items-center text-sm md:text-base font-bold text-white border-t border-white/10 mt-auto">
                     <span>Total DE Credits</span>
                     <span className="text-blue-400 text-xl">20 Credits</span>
                   </div>
@@ -261,7 +261,7 @@ export default function Academics() {
               </div>
 
               {/* SENIOR YEAR IN PROGRESS CARD */}
-              <div className="bg-linear-to-r from-blue-950/40 to-orange-950/40 border border-white/10 rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden mt-8! md:mt-10!">
+              <div className="bg-linear-to-r from-blue-950/40 to-orange-950/40 border border-white/10 rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden mt-5! md:mt-6!">
                 <div className="absolute top-4 right-6">
                   <span className="px-4 py-1.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/30 text-[10px] md:text-xs font-bold uppercase tracking-widest animate-pulse">
                     Senior Year (In Progress)
@@ -274,7 +274,7 @@ export default function Academics() {
                 <p className="text-sm md:text-base text-gray-400 mb-6 leading-relaxed">
                   Continuing the rigorous STEM and Business/Finance track with Syracuse University (SUPA), State University of New York (SUNY), and Advanced Placement (AP) partnerships:
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm text-gray-300">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-xs md:text-sm text-gray-300">
                   <div className="flex items-center gap-3 bg-black/40 p-4 rounded-xl border border-white/5 hover:border-accent/20 transition-colors">
                     <div className="w-2 h-2 rounded-full bg-accent shrink-0"></div>
                     <div>
