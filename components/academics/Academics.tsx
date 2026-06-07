@@ -170,7 +170,7 @@ export default function Academics() {
                     <span>College Credit Breakdown</span>
                   </h3>
                   <p className="text-sm text-gray-400 font-mono mt-2">
-                    Santiago Vega | 36 College Credits Earned (As of Junior
+                    Santiago Vega | ~33 College Credits Earned (As of Junior
                     Year)
                   </p>
                 </div>
@@ -191,19 +191,19 @@ export default function Academics() {
                       </div>
                       <ul className="space-y-2 mb-6 text-sm md:text-base text-gray-300 mx-4 md:mx-6">
                         <li className="flex justify-between border-b border-white/5 pb-3">
-                          <span>AP United States History</span>
+                          <span>SS320 AP US History</span>
                           <span className="font-bold text-accent">
-                            6 credits
+                            3 credits
                           </span>
                         </li>
                         <li className="flex justify-between border-b border-white/5 pb-3">
-                          <span>AP English Lit & Composition</span>
+                          <span>EN320 AP English 11</span>
                           <span className="font-bold text-accent">
-                            6 credits
+                            3 credits
                           </span>
                         </li>
                         <li className="flex justify-between border-b border-white/5 pb-3">
-                          <span>AP Physics 1</span>
+                          <span>SC425 AP Physics 1</span>
                           <span className="font-bold text-accent">
                             4 credits
                           </span>
@@ -212,7 +212,7 @@ export default function Academics() {
                     </div>
                     <div className="pt-4 mx-4 md:mx-6 flex justify-between items-center text-sm md:text-base font-bold text-white border-t border-white/10 mt-auto">
                       <span>Total AP Credits</span>
-                      <span className="text-accent text-xl">16 Credits</span>
+                      <span className="text-accent text-xl">10 Credits</span>
                     </div>
                   </div>
 
@@ -232,23 +232,10 @@ export default function Academics() {
                         <li className="flex justify-between border-b border-white/5 pb-3">
                           <div>
                             <span className="font-bold block text-white text-xs md:text-sm">
-                              Siena College
+                              SUNY Schenectady
                             </span>
                             <span className="text-[11px] md:text-xs text-gray-400">
-                              Pre-Calculus
-                            </span>
-                          </div>
-                          <span className="font-bold text-blue-400 self-center">
-                            4 credits
-                          </span>
-                        </li>
-                        <li className="flex justify-between border-b border-white/5 pb-3">
-                          <div>
-                            <span className="font-bold block text-white text-xs md:text-sm">
-                              Hudson Valley CC (HVCC)
-                            </span>
-                            <span className="text-[11px] md:text-xs text-gray-400">
-                              Statistics
+                              MA420 Pre-Calculus Honors
                             </span>
                           </div>
                           <span className="font-bold text-blue-400 self-center">
@@ -261,7 +248,7 @@ export default function Academics() {
                               SUNY Schenectady
                             </span>
                             <span className="text-[11px] md:text-xs text-gray-400">
-                              Python / Intro to CS
+                              FL410 Spanish IV
                             </span>
                           </div>
                           <span className="font-bold text-blue-400 self-center">
@@ -271,14 +258,40 @@ export default function Academics() {
                         <li className="flex justify-between border-b border-white/5 pb-3">
                           <div>
                             <span className="font-bold block text-white text-xs md:text-sm">
-                              SUNY (Bilingual Sequence)
+                              SUNY Schenectady
                             </span>
                             <span className="text-[11px] md:text-xs text-gray-400">
-                              Advanced Spanish
+                              MA530 Statistics
                             </span>
                           </div>
                           <span className="font-bold text-blue-400 self-center">
-                            6 credits
+                            3 credits
+                          </span>
+                        </li>
+                        <li className="flex justify-between border-b border-white/5 pb-3">
+                          <div>
+                            <span className="font-bold block text-white text-xs md:text-sm">
+                              Hudson Valley CC (HVCC)
+                            </span>
+                            <span className="text-[11px] md:text-xs text-gray-400">
+                              Python Programming
+                            </span>
+                          </div>
+                          <span className="font-bold text-blue-400 self-center">
+                            4 credits
+                          </span>
+                        </li>
+                        <li className="flex justify-between border-b border-white/5 pb-3">
+                          <div>
+                            <span className="font-bold block text-white text-xs md:text-sm">
+                              SIENA COLLEGE
+                            </span>
+                            <span className="text-[11px] md:text-xs text-gray-400">
+                              CS300 CS Multimedia Python
+                            </span>
+                          </div>
+                          <span className="font-bold text-blue-400 self-center">
+                            3 credits
                           </span>
                         </li>
                         <li className="flex justify-between border-b border-white/5 pb-3">
@@ -287,18 +300,31 @@ export default function Academics() {
                               Rochester Institute of Tech (RIT)
                             </span>
                             <span className="text-[11px] md:text-xs text-gray-400">
-                              Project-Based Engineering
+                              PL330 Int Eng Design
                             </span>
                           </div>
                           <span className="font-bold text-blue-400 self-center">
-                            3 credits
+                            ~3 credits
+                          </span>
+                        </li>
+                        <li className="flex justify-between border-b border-white/5 pb-3">
+                          <div>
+                            <span className="font-bold block text-white text-xs md:text-sm">
+                              Rochester Institute of Tech (RIT)
+                            </span>
+                            <span className="text-[11px] md:text-xs text-gray-400">
+                              PL332 Princ Engineer
+                            </span>
+                          </div>
+                          <span className="font-bold text-blue-400 self-center">
+                            ~3 credits
                           </span>
                         </li>
                       </ul>
                     </div>
                     <div className="pt-4 mx-4 md:mx-6 flex justify-between items-center text-sm md:text-base font-bold text-white border-t border-white/10 mt-auto">
                       <span>Total DE Credits</span>
-                      <span className="text-blue-400 text-xl">20 Credits</span>
+                      <span className="text-blue-400 text-xl">~23 Credits</span>
                     </div>
                   </div>
                 </div>

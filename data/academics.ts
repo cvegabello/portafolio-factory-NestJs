@@ -90,7 +90,7 @@ export const academicsData: AcademicsData = {
     },
     {
       id: 6,
-      value: "36",
+      value: "~33",
       label: "College Credits",
       iconName: "Scroll",
       color: "orange",
@@ -177,9 +177,9 @@ export const academicsData: AcademicsData = {
       title: "Senior Year: College Credits & Leadership",
       school: "Schalmont High School",
       description:
-        "Projected to accumulate 36 college credits and lead as a Senior on the Varsity Soccer team.",
+        "Projected to accumulate ~33 college credits and lead as a Senior on the Varsity Soccer team.",
       details:
-        "Currently taking multiple advanced AP courses (Physics, US History) and college-credit courses, accumulating 36 transferable college credits before graduation. Leading the varsity soccer team and finalizing the university recruiting process for a Computer Science / Finance degree.",
+        "Currently taking multiple advanced AP courses (Physics, US History) and college-credit courses, accumulating ~33 transferable college credits before graduation. Leading the varsity soccer team and finalizing the university recruiting process for a Computer Science / Finance degree.",
       iconName: "work",
     },
     {
