@@ -9,12 +9,12 @@ export const referencesData = {
     {
       id: 1,
       name: "Mrs. Sarah Smith",
-      role: "AP COMPUTER SCIENCE",
+      role: "SCIENTIST & FORMER SCHALMONT TEACHER",
       avatar: "/img/ref1.jpg", // Foto de la persona
       quote:
         "One of the brightest analytical minds. His code is as clean as his game.",
       signature: "- s. smith",
-      pdfUrl: "docs/JuniorScholarshipSanti.pdf",
+      pdfUrl: null,
     },
     {
       id: 2,
