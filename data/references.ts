@@ -8,12 +8,12 @@ export const referencesData = {
   testimonials: [
     {
       id: 1,
-      name: "Mrs. Sarah Smith",
-      role: "SCIENTIST & FORMER SCHALMONT TEACHER",
-      avatar: "/img/ref1.jpg", // Foto de la persona
+      name: "Kylie Gibbs",
+      role: "School Counselor at Schalmont High School",
+      avatar: "/img/kylie-gibbs-avatar.png", // Foto de la persona
       quote:
-        "One of the brightest analytical minds. His code is as clean as his game.",
-      signature: "- s. smith",
+        "Santiago is an exceptional student. He has a natural ability to not only succeed academically but thrive in college preparatory courses. His teachers and peers enjoy having him in class, he is respectful, kind, and conscientious of others. I have no doubt that he will do well wherever he chooses to study.",
+      signature: "- Kylie Gibbs",
       pdfUrl: null,
     },
     {
