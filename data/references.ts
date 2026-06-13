@@ -10,6 +10,7 @@ export const referencesData = {
       id: 1,
       name: "Kylie Gibbs",
       role: "School Counselor at Schalmont High School",
+      email: "kgibbs@schalmont.org", // Placeholder: user should update this with the real email
       avatar: "/img/kylie-gibbs-avatar.png", // Foto de la persona
       quote:
         "Santiago is an exceptional student. He has a natural ability to not only succeed academically but thrive in college preparatory courses. His teachers and peers enjoy having him in class, he is respectful, kind, and conscientious of others. I have no doubt that he will do well wherever he chooses to study.",
@@ -20,6 +21,7 @@ export const referencesData = {
       id: 2,
       name: "Vito Urbano",
       role: "Head Varsity Soccer Coach at Schalmont High School",
+      email: "vurbano@schalmont.org", // Placeholder: user should update this with the real email
       avatar: "/img/vito-urbano-avatar.png",
       quote:
         "Santiago is an outstanding student-athlete. [Placeholder: We will update this quote as soon as Coach Urbano sends his official recommendation letter.]",

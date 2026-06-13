@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, PanInfo } from 'framer-motion';
 import { 
-  ChevronLeft, ChevronRight, Hand, Quote, Star, User
+  ChevronLeft, ChevronRight, Hand, Quote, Star, User, Mail
 } from 'lucide-react';
 
 // --- DEFINICIÓN DE TIPOS (Adaptado a Referencias) ---
@@ -15,6 +15,7 @@ interface ReferenceItem {
   quote: string;
   signature: string;
   pdfUrl?: string | null;
+  email?: string;
 }
 
 interface CarouselProps {
@@ -176,9 +177,21 @@ export default function ReferencesCarousel({ items }: CarouselProps) {
                               </h3>
 
                               {/* Cargo (En Naranja/Accent) */}
-                              <span className="text-accent font-bold tracking-widest text-sm md:text-base uppercase mb-4">
+                              <span className={`text-accent font-bold tracking-widest text-sm md:text-base uppercase ${item.email ? 'mb-2' : 'mb-4'}`}>
                                 {item.role}
                               </span>
+
+                              {/* Correo Electrónico */}
+                              {item.email && (
+                                <a 
+                                  href={`mailto:${item.email}`}
+                                  className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-xs md:text-sm mb-4 bg-white/5 py-1.5 px-3 rounded-full border border-white/10 hover:border-white/30"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  <Mail size={14} className="text-blue-400" />
+                                  <span className="font-medium tracking-wide">{item.email}</span>
+                                </a>
+                              )}
 
                               {/* Línea y Tap to Flip */}
                               <div className="mt-auto w-full px-12 flex flex-col items-center">
