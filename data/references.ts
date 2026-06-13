@@ -18,12 +18,12 @@ export const referencesData = {
     },
     {
       id: 2,
-      name: "Coach Mike Johnson",
-      role: "HEAD COACH",
-      avatar: "/img/ref2.jpg",
+      name: "Vito Urbano",
+      role: "Head Varsity Soccer Coach at Schalmont High School",
+      avatar: "/img/vito-urbano-avatar.png",
       quote:
-        "A natural leader on and off the field. He brings the same discipline to coding as he does to training.",
-      signature: "- m. johnson",
+        "Santiago is an outstanding student-athlete. [Placeholder: We will update this quote as soon as Coach Urbano sends his official recommendation letter.]",
+      signature: "- Vito Urbano",
       pdfUrl: null,
     },
     {
