@@ -236,8 +236,8 @@ export default function ReferencesCarousel({ items }: CarouselProps) {
                             </div>
                             
                             {/* 2. Cita Textual */}
-                            <div className="flex-1 flex items-center w-full overflow-y-auto my-4! px-2! scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-                              <p className="text-white/90 text-[15px] md:text-base lg:text-[17px] leading-relaxed font-serif italic w-full">
+                            <div className="flex-1 flex flex-col w-full overflow-y-auto my-4! px-2! scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                              <p className="text-white/90 text-[15px] md:text-base lg:text-[17px] leading-relaxed font-serif italic w-full my-auto py-2">
                                 "{item.quote}"
                               </p>
                             </div>
