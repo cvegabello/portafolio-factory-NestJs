@@ -225,31 +225,32 @@ export default function ReferencesCarousel({ items }: CarouselProps) {
                         <div className="relative w-full h-full rounded-[20px] overflow-hidden flex flex-col px-8! items-center text-center border border-white/5 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-10 bg-[#080808]">
                             
                             {/* 1. Icono Comillas (Moderno Gradiente) */}
-                            <div className="top-4!">
+                            <div className="mt-4! md:mt-6!">
                                <Quote 
-                                  size={48} 
+                                  size={36} 
                                   className="text-transparent fill-current" 
-                                  style={{ stroke: 'url(#gradient-quote)', fill: 'url(#gradient-quote)' }} // Truco SVG si se quiere, o simple color
+                                  style={{ stroke: 'url(#gradient-quote)', fill: 'url(#gradient-quote)' }} 
                                 />
-                                {/* Truco simple para gradiente en icono Lucide: Usamos text-clip o clases Tailwind */}
-                                <div className="absolute top-10! left-1/2 -translate-x-1/2 w-18! h-18! bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur-[10px] opacity-40"></div>
-                                <Quote size={50} className="text-blue-500 fill-blue-500/20" />
+                                <div className="absolute top-8! left-1/2 -translate-x-1/2 w-16! h-16! bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur-[10px] opacity-40"></div>
+                                <Quote size={36} className="text-blue-500 fill-blue-500/20" />
                             </div>
                             
                             {/* 2. Cita Textual */}
-                            <p className="text-white/90 text-lg md:text-xl leading-relaxed font-serif italic mt-12! mb-8!">
-                              "{item.quote}"
-                            </p>
+                            <div className="flex-1 flex items-center w-full overflow-y-auto my-4! px-2! scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                              <p className="text-white/90 text-[15px] md:text-base lg:text-[17px] leading-relaxed font-serif italic w-full">
+                                "{item.quote}"
+                              </p>
+                            </div>
 
                             {/* 3. Estrellas (5 Estrellas) */}
-                            <div className="flex gap-1 mb-12!">
+                            <div className="flex gap-1 mb-4! md:mb-6!">
                                {[...Array(5)].map((_, i) => (
-                                  <Star key={i} size={20} className="text-yellow-500 fill-yellow-500" />
+                                  <Star key={i} size={16} className="text-yellow-500 fill-yellow-500" />
                                ))}
                             </div>
 
                             {/* 4. PDF Official Letter (Moved here to fill space) */}
-                            <div className="mb-12! z-50">
+                            <div className="mb-4! md:mb-6! z-50">
                               {item.pdfUrl ? (
                                 <a
                                   href={item.pdfUrl}
@@ -274,12 +275,12 @@ export default function ReferencesCarousel({ items }: CarouselProps) {
                             </div>
 
                             {/* 5. Firma (Nombre Abreviado - Pushed to bottom) */}
-                            <div className="mt-auto! text-blue-400 font-mono text-sm tracking-widest uppercase mb-4!">
+                            <div className="mt-auto! text-blue-400 font-mono text-xs tracking-widest uppercase mb-2!">
                                {item.signature}
                             </div>
                             
                             {/* Botón volver (oculto visualmente pero útil para saber) */}
-                            <div className="mb-2! text-white-500 text-[13px] tracking-widest animate-pulse font-medium">
+                            <div className="mb-2! md:mb-4! text-white-500 text-[11px] tracking-widest animate-pulse font-medium">
                                  Tap to flip back
                             </div>
 
