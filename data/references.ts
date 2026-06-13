@@ -30,12 +30,13 @@ export const referencesData = {
     },
     {
       id: 3,
-      name: "Mr. David Lee",
-      role: "SENIOR DEVELOPER",
-      avatar: "/img/ref3.jpg",
+      name: "Monica Dicocco",
+      role: "Spanish Teacher & Club Advisor",
+      email: "mmdicocco@schalmont.net",
+      avatar: "/img/monica-dicocco-santi.png",
       quote:
-        "His ability to solve complex algorithms under pressure is impressive. A 5-star developer in the making.",
-      signature: "- d. lee",
+        "Santiago has always shown great dedication and kindness. [Placeholder: We will update this quote as soon as Ms. Dicocco sends her official recommendation.]",
+      signature: "- Monica Dicocco",
       pdfUrl: null,
     },
   ],
