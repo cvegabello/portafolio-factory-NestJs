@@ -75,7 +75,7 @@ export const athleticsData = {
         title: "Midfield Playmaking & Key Actions",
         description:
           "Rotterdam Utd #10 & Schalmont HS #18 | Assists, creative passes & shots",
-        videoUrl: "https://www.youtube.com/embed/gm12Rtvciwc",
+        videoUrl: "https://www.youtube.com/embed/e9IrlK_EOy8",
       },
     ],
   },
