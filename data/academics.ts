@@ -161,6 +161,17 @@ export const academicsData: AcademicsData = {
     },
     {
       id: 6,
+      year: "June 2026",
+      title: "National Recognition Program",
+      school: "CollegeBoard",
+      description:
+        "Awarded the School Recognition Award for Outstanding Academic Achievement.",
+      details:
+        "Earned the prestigious National Recognition Program School Recognition Award from the College Board, awarded for outstanding academic achievement.",
+      iconName: "award",
+    },
+    {
+      id: 7,
       year: "2025 - 2026",
       title: "Leadership & Community Impact",
       school: "Schalmont High School",
@@ -172,7 +183,7 @@ export const academicsData: AcademicsData = {
       iconName: "star",
     },
     {
-      id: 7,
+      id: 8,
       year: "2026 - 2027",
       title: "Senior Year: College Credits & Leadership",
       school: "Schalmont High School",
@@ -183,7 +194,7 @@ export const academicsData: AcademicsData = {
       iconName: "work",
     },
     {
-      id: 8,
+      id: 9,
       year: "2027",
       title: "Graduation & College Transition",
       school: "Schalmont High School / College",
@@ -262,6 +273,11 @@ export const academicsData: AcademicsData = {
         {
           name: "Colonial Council Sportsmanship Summit",
           url: "/docs/ColonialCouncilSportsmanshipSanti.pdf",
+          type: "download",
+        },
+        {
+          name: "National Recognition Program Certificate",
+          url: "/docs/NationalRecognitionCertificateSanti.pdf",
           type: "download",
         },
       ],
