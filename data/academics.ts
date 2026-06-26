@@ -80,6 +80,7 @@ export const academicsData: AcademicsData = {
       id: 4,
       value: "Computer Science",
       label: "Intended Major",
+      tooltip: "Combined with a Double Major or Minor in:\nSports Analytics • Data Science • Finance",
       iconName: "Laptop",
       color: "orange",
     },
