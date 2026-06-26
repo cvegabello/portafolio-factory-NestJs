@@ -106,6 +106,16 @@ export default function Academics() {
                     </span>
                   )}
                 </div>
+
+                {/* Tooltip for extra info like SAT breakdown */}
+                {stat.tooltip && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-max bg-[#111] border border-white/20 text-gray-300 text-[11px] md:text-xs rounded-lg px-4 py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl flex flex-col items-center text-center">
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#111] border-l border-t border-white/20 rotate-45"></div>
+                    {stat.tooltip.split('\n').map((line, i) => (
+                      <span key={i} className="relative z-10 whitespace-nowrap mt-0.5">{line}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}

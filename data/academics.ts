@@ -7,6 +7,7 @@ export interface StatItem {
   label: string;
   iconName: string;
   color: "blue" | "orange";
+  tooltip?: string;
 }
 
 export interface LockerFile {
@@ -62,8 +63,9 @@ export const academicsData: AcademicsData = {
     },
     {
       id: 2,
-      value: "1390",
-      label: "SAT Score",
+      value: "1420",
+      label: "SAT SuperScore",
+      tooltip: "Math: 730 (Test 1)\nReading & Writing: 690 (Test 2)",
       iconName: "PenTool",
       color: "orange",
     },
@@ -242,6 +244,11 @@ export const academicsData: AcademicsData = {
         {
           name: "SAT Official Report March 2026",
           url: "/docs/sat-score-march-2026.pdf",
+          type: "download",
+        },
+        {
+          name: "SAT Official Report June 2026",
+          url: "/docs/sat-score-june-2026.pdf",
           type: "download",
         },
         {
