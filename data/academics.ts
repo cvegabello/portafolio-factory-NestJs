@@ -56,7 +56,7 @@ export const academicsData: AcademicsData = {
   stats: [
     {
       id: 1,
-      value: "102.98",
+      value: "103.62",
       label: "Weighted GPA",
       iconName: "BookOpen",
       color: "blue",
@@ -80,7 +80,8 @@ export const academicsData: AcademicsData = {
       id: 4,
       value: "Computer Science",
       label: "Intended Major",
-      tooltip: "Combined with a Double Major or Minor in:\nSports Analytics • Data Science • Finance",
+      tooltip:
+        "Combined with a Double Major or Minor in:\nSports Analytics • Data Science • Finance",
       iconName: "Laptop",
       color: "orange",
     },
@@ -227,8 +228,8 @@ export const academicsData: AcademicsData = {
           type: "download",
         },
         {
-          name: "Report Card 11th Grade Qtr 3",
-          url: "/docs/santiago-reportcard-11-qtr3.pdf",
+          name: "Report Card 11th Grade",
+          url: "/docs/santiago-reportcard-11-qtr4.pdf",
           type: "download",
         },
         {
