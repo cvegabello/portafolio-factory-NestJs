@@ -189,12 +189,12 @@ export const academicsData: AcademicsData = {
     {
       id: 8,
       year: "2026 - 2027",
-      title: "Senior Year: College Credits & Leadership",
+      title: "Junior Year: AP Scholar, College Credits & Leadership",
       school: "Schalmont High School",
       description:
         "Projected to accumulate ~33 college credits and lead as a Senior on the Varsity Soccer team.",
       details:
-        "Currently taking multiple advanced AP courses (Physics, US History) and college-credit courses, accumulating ~33 transferable college credits before graduation. Leading the varsity soccer team and finalizing the university recruiting process for a Computer Science / Finance degree.",
+        "Entering Senior year with perfect scores (5) in AP Physics 1, AP US History, and AP English Literature. Continuing a rigorous STEM/Business track taking AP Calculus, AP Physics II, and Syracuse University (SUPA) courses, on track to accumulate ~33 transferable college credits before graduation. Leading the varsity soccer team and finalizing the university recruiting process for a Computer Science / Finance degree.",
       iconName: "work",
     },
     {
@@ -251,6 +251,11 @@ export const academicsData: AcademicsData = {
         {
           name: "SAT Official Report June 2026",
           url: "/docs/sat-score-june-2026.pdf",
+          type: "download",
+        },
+        {
+          name: "Scores AP Official Report June 2026",
+          url: "/docs/ScoreAPReportSantiago.pdf",
           type: "download",
         },
         {

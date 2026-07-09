@@ -19,15 +19,26 @@ export const referencesData = {
     },
     {
       id: 2,
-      name: "Vito Urbano",
-      role: "Head Varsity Soccer Coach at Schalmont High School",
-      email: "vitourbano@gmail.com",
-      avatar: "/img/vito-urbano-avatar.png",
+      name: "Scott Byrnes",
+      role: "Director of Coaching, Rotterdam United Soccer Club & Head Coach, RUSC 08 NL Boys",
+      email: "scottbyrnes@live.com",
+      avatar: "/img/scott-byrnes-avatar.png",
       quote:
-        "Santiago is an outstanding student-athlete. [Placeholder: We will update this quote as soon as Coach Urbano sends his official recommendation letter.]",
-      signature: "- Vito Urbano",
+        "I have had the privilege of coaching Santiago Vega for the past seven years, and during that time he has consistently demonstrated the qualities every coach hopes to find in a student-athlete. Santiago combines technical ability, intelligence, and a tireless work ethic with exceptional character, leadership, and respect for his teammates, coaches, and opponents. He leads by example both on and off the field, embraces challenges with a positive attitude, and is someone I can trust in any situation. I am confident that Santiago will be an outstanding addition to any college program and campus community fortunate enough to have him.",
+      signature: "- Scott Byrnes",
       pdfUrl: null,
     },
+    // {
+    //   id: 2,
+    //   name: "Vito Urbano",
+    //   role: "Head Varsity Soccer Coach at Schalmont High School",
+    //   email: "vitourbano@gmail.com",
+    //   avatar: "/img/vito-urbano-avatar.png",
+    //   quote:
+    //     "Santiago is an outstanding student-athlete. [Placeholder: We will update this quote as soon as Coach Urbano sends his official recommendation letter.]",
+    //   signature: "- Vito Urbano",
+    //   pdfUrl: null,
+    // },
     {
       id: 3,
       name: "Mónica Muñiz DiCocco",

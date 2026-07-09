@@ -111,8 +111,10 @@ export default function Academics() {
                 {stat.tooltip && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-max bg-[#111] border border-white/20 text-gray-300 text-[11px] md:text-xs rounded-lg px-6! py-3! opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl flex flex-col items-center text-center gap-1">
                     <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#111] border-l border-t border-white/20 rotate-45"></div>
-                    {stat.tooltip.split('\n').map((line, i) => (
-                      <span key={i} className="relative z-10 whitespace-nowrap">{line}</span>
+                    {stat.tooltip.split("\n").map((line, i) => (
+                      <span key={i} className="relative z-10 whitespace-nowrap">
+                        {line}
+                      </span>
                     ))}
                   </div>
                 )}
@@ -201,19 +203,19 @@ export default function Academics() {
                       </div>
                       <ul className="space-y-2 mb-6 text-sm md:text-base text-gray-300 mx-4 md:mx-6">
                         <li className="flex justify-between border-b border-white/5 pb-3">
-                          <span>SS320 AP US History</span>
+                          <span>SS320 AP US History (Score: 5)</span>
                           <span className="font-bold text-accent">
                             3 credits
                           </span>
                         </li>
                         <li className="flex justify-between border-b border-white/5 pb-3">
-                          <span>EN320 AP English 11</span>
+                          <span>EN320 AP English 11 (Score: 5)</span>
                           <span className="font-bold text-accent">
                             3 credits
                           </span>
                         </li>
                         <li className="flex justify-between border-b border-white/5 pb-3">
-                          <span>SC425 AP Physics 1</span>
+                          <span>SC425 AP Physics 1 (Score: 5)</span>
                           <span className="font-bold text-accent">
                             4 credits
                           </span>
