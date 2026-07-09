@@ -146,9 +146,9 @@ export const academicsData: AcademicsData = {
       title: "Junior Year: Honor Societies & SAT",
       school: "Schalmont High School",
       description:
-        "Inducted into Science, English, and Spanish Honor Societies. Scored 1390 on the SAT and maintained a 102.98 GPA.",
+        "Inducted into Science, English, and Spanish Honor Societies. Scored 1420 on the SAT and maintained a 103.62 GPA.",
       details:
-        "A year of exceptional academic milestones: simultaneous induction into the Science Honor Society, English Honor Society, and Spanish Honor Society. Achieved an outstanding SAT score of 1390 (730 in math, top national percentile) and a record weighted GPA of 102.98, while completing university-level courses through SUNY and HVCC.",
+        "A year of exceptional academic milestones: simultaneous induction into the Science Honor Society, English Honor Society, and Spanish Honor Society. Achieved an outstanding SAT score of 1420 (730 in math, 690 in reading and writing, top national percentile) and a record weighted GPA of 103.62, while completing university-level courses through SUNY and HVCC.",
       image: "/img/ScienceHonorSocInd.jpeg",
       iconName: "code",
     },
