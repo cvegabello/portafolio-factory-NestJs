@@ -28,19 +28,19 @@ export const referencesData = {
       signature: "- Scott Byrnes",
       pdfUrl: null,
     },
-    // {
-    //   id: 2,
-    //   name: "Vito Urbano",
-    //   role: "Head Varsity Soccer Coach at Schalmont High School",
-    //   email: "vitourbano@gmail.com",
-    //   avatar: "/img/vito-urbano-avatar.png",
-    //   quote:
-    //     "Santiago is an outstanding student-athlete. [Placeholder: We will update this quote as soon as Coach Urbano sends his official recommendation letter.]",
-    //   signature: "- Vito Urbano",
-    //   pdfUrl: null,
-    // },
     {
       id: 3,
+      name: "Vito Urbano",
+      role: "Schalmont Boys Soccer, Varsity Head Coach",
+      email: "vitourbano@gmail.com",
+      avatar: "/img/Vito-Urbano-Photo.jpg",
+      quote:
+        "I have had the pleasure of coaching Santiago for the last 4 years on the Schalmont Boys Varsity team. During this time, Santiago has displayed an amazing work ethic and desire to improve each day he showed up to compete. Santiago is a tremendous athlete and an even more impressive student, providing his teammates with an amazing role model and a true gold standard to follow as a student athlete. Santiago is the type of player who can boost both the talent level on the field and the team's morale, and I am very thankful that I get to call him one of my athletes.",
+      signature: "- Vito Urbano",
+      pdfUrl: null,
+    },
+    {
+      id: 4,
       name: "Mónica Muñiz DiCocco",
       role: "Spanish Teacher & Spanish Club, Spanish Honor Society, and SADD Club Advisor at Schalmont High School",
       email: "mmdicocco@schalmont.net",
@@ -51,7 +51,7 @@ export const referencesData = {
       pdfUrl: null,
     },
     {
-      id: 4,
+      id: 5,
       name: "Chase Campbell",
       role: "Global Studies Teacher at Schalmont High School",
       email: "ccampbell@gmail.com",
