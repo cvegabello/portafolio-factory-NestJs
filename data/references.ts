@@ -53,11 +53,11 @@ export const referencesData = {
     {
       id: 5,
       name: "Chase Campbell",
-      role: "Global Studies Teacher at Schalmont High School",
-      email: "ccampbell@gmail.com",
-      avatar: "/img/chase-campbell-avatar.png",
+      role: "Instructor of World History Studies at Schalmont High School",
+      email: "ccampbell@schalmont.net",
+      avatar: "/img/chase-campbell-photo.JPG",
       quote:
-        "Santiago is an outstanding student and an amazing friend. [Placeholder: We will update this quote as soon as Mr. Campbell sends his official recommendation.]",
+        "Santi Vega is an intellectual, ethical, and and hard-working standout among a sea of strong students. He is brilliant, but willing to learn and take criticism to elicit growth and skill development. Santi genuinely cares equally about both the process of learning and task completion and its actual completion; marking him as a excellent student candidate for any university. Santi's work ethic is second -to-none, both in the classroom, and in matters of athletics, family, and community service. He is a scholar athlete of the highest caliber able to deliver on the field with precision and excellent field-awareness. I consider it a privilege to have had the honor of being a part of Santi's educational career.",
       signature: "- Chase Campbell",
       pdfUrl: null,
     },
