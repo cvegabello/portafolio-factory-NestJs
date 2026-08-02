@@ -8,7 +8,7 @@ export const momentsData = {
   moments: [
     {
       id: 1,
-      title: "Regional Runner-up",
+      title: "State Finalist",
       category: "VARSITY SOCCER 2024",
       image: "/img/gallery-1.jpg",
       description: "Celebrating a hard-fought season with the team.",
@@ -48,35 +48,40 @@ export const momentsData = {
       title: "Salt Cathedral of Zipaquirá",
       category: "TRAVEL & HERITAGE",
       image: "/img/CatedralZipaSanti.jpeg",
-      description: "Exploring the Salt Cathedral of Zipaquirá in Colombia, an architectural masterpiece carved deep inside a salt mine. A beautiful reconnection with his Colombian roots and heritage.",
+      description:
+        "Exploring the Salt Cathedral of Zipaquirá in Colombia, an architectural masterpiece carved deep inside a salt mine. A beautiful reconnection with his Colombian roots and heritage.",
     },
     {
       id: 7,
       title: "Championship Victory",
       category: "SOCCER CHAMPIONS",
       image: "/img/ChampionSanti.jpeg",
-      description: "Celebrating a championship victory after a grueling tournament. A proud display of hard work, discipline, and team spirit.",
+      description:
+        "Celebrating a championship victory after a grueling tournament. A proud display of hard work, discipline, and team spirit.",
     },
     {
       id: 8,
       title: "Junior Awards Recognition",
       category: "ACADEMICS",
       image: "/img/JuniorAwardsCeremony.jpeg",
-      description: "Receiving academic recognition at the annual Junior Awards Ceremony, celebrating excellence and dedication in his studies.",
+      description:
+        "Receiving academic recognition at the annual Junior Awards Ceremony, celebrating excellence and dedication in his studies.",
     },
     {
       id: 9,
       title: "Gratitude & Mentorship",
       category: "ACADEMICS",
       image: "/img/SantiMoniSpanishTeacher.jpeg",
-      description: "A special moment of recognition and appreciation with his Spanish teacher at Schalmont High School, thanking mentors who guide the way.",
+      description:
+        "A special moment of recognition and appreciation with his Spanish teacher at Schalmont High School, thanking mentors who guide the way.",
     },
     {
       id: 10,
       title: "SHS Community Volunteering",
       category: "COMMUNITY SERVICE",
       image: "/img/VoluntareadoSHSSanti.png",
-      description: "Serving the community through Science Honor Society initiatives, applying STEM knowledge to volunteer and help others in need.",
+      description:
+        "Serving the community through Science Honor Society initiatives, applying STEM knowledge to volunteer and help others in need.",
     },
   ],
 };
