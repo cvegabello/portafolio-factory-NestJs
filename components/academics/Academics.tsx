@@ -371,17 +371,6 @@ export default function Academics() {
                         </span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 bg-black/40 p-4 rounded-xl border border-white/5 hover:border-accent/20 transition-colors">
-                      <div className="w-2 h-2 rounded-full bg-accent shrink-0"></div>
-                      <div>
-                        <span className="font-semibold block text-white text-sm">
-                          AP Physics II
-                        </span>
-                        <span className="text-gray-500 text-[11px] md:text-xs">
-                          Science (1.0 HS Credit / College Credit Pending)
-                        </span>
-                      </div>
-                    </div>
                     <div className="flex items-center gap-3 bg-black/40 p-4 rounded-xl border border-white/5 hover:border-blue-500/20 transition-colors">
                       <div className="w-2 h-2 rounded-full bg-blue-500 shrink-0"></div>
                       <div>

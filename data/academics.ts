@@ -194,11 +194,22 @@ export const academicsData: AcademicsData = {
       description:
         "Projected to accumulate ~33 college credits and lead as a Senior on the Varsity Soccer team.",
       details:
-        "Entering Senior year with perfect scores (5) in AP Physics 1, AP US History, and AP English Literature. Continuing a rigorous STEM/Business track taking AP Calculus, AP Physics II, and Syracuse University (SUPA) courses, on track to accumulate ~33 transferable college credits before graduation. Leading the varsity soccer team and finalizing the university recruiting process for a Computer Science / Finance degree.",
+        "Entering Senior year with perfect scores (5) in AP Physics 1, AP US History, and AP English Literature. Continuing a rigorous STEM/Business track taking AP Calculus and Syracuse University (SUPA) courses, on track to accumulate ~33 transferable college credits before graduation. Leading the varsity soccer team and finalizing the university recruiting process for a Computer Science / Finance degree.",
       iconName: "work",
     },
     {
       id: 9,
+      year: "October 2026",
+      title: "National Honor Society (NHS): Accepted Member",
+      school: "Schalmont High School",
+      description:
+        "Selected for membership in the Schalmont High School chapter of the National Honor Society.",
+      details:
+        "Accepted as a member of the Schalmont High School chapter of the National Honor Society (NHS), which recognizes students who excel in its four pillars: Scholarship, Service, Leadership, and Character. Selection followed sustained volunteer service and leadership activities. Official Induction Ceremony: November 5, 2026.",
+      iconName: "award",
+    },
+    {
+      id: 10,
       year: "2027",
       title: "Graduation & College Transition",
       school: "Schalmont High School / College",
@@ -292,6 +303,11 @@ export const academicsData: AcademicsData = {
         {
           name: "National Recognition Program Certificate",
           url: "/docs/NationalRecognitionCertificateSanti.pdf",
+          type: "download",
+        },
+        {
+          name: "National Honor Society Acceptance",
+          url: "/docs/NHSAcceptanceSanti.pdf",
           type: "download",
         },
       ],
